@@ -19,15 +19,19 @@ export function Login() {
     } else if (email !== "challenge@alkemy.org" || password !== "react") {
       swal(<h2>Credenciales inválidas</h2>);
     } else {
-      swal(
-        <h2>
-          Credenciales correctas! Estamos listos para enviar la información
-        </h2>
-      );
       axios
         .post(PATH_API_ALKEMI, { email, password })
         .then((result) => {
           console.log(result.data);
+          swal(
+            <h2>
+              Credenciales correctas! Estamos listos para enviar la información
+            </h2>
+          );
+
+          const tokenRecibido = result.data.token;
+          localStorage.setItem("token", tokenRecibido);
+          localStorage.setItem("miNombre", "Gustavo caradonna");
         })
         .catch((err) => {
           console.log(err);
