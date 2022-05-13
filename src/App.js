@@ -1,11 +1,16 @@
 import "./App.css";
-import { Login, HolaReact } from "./components/Login";
+import { Login } from "./components/Login";
+import { Listado } from "./components/Listado";
+import { Routes, Route, Link } from "react-router-dom";
+import * as React from "react";
 
 function App() {
   return (
     <>
-      <Login />
-      <HolaReact />
+      <Routes>
+        <Route path="/" element={<Login />} />
+        <Route path="/listado" element={<Listado />} />
+      </Routes>
     </>
   );
 }

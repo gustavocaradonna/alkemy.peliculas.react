@@ -1,7 +1,10 @@
 import axios from "axios";
-import swal from "@sweetalert/with-react";
+// import swal from "@sweetalert/with-react";
+import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export function Login() {
+  const navi = useNavigate();
   const submitHandler = (e) => {
     e.preventDefault();
     const PATH_API_ALKEMI = "http://challenge-react.alkemy.org";
@@ -13,25 +16,22 @@ export function Login() {
     // console.log(regex.test(email));
 
     if (email === "" || password === "") {
-      swal(<h2>Los campos no pueden estar vacios</h2>);
+      alert("Los campos no pueden estar vacios");
     } else if (email !== "" && !regex.test(email)) {
-      swal(<h2>Debes escribir una direccion de correo electronico valida</h2>);
+      alert("Debes escribir una direccion de correo electronico valida");
     } else if (email !== "challenge@alkemy.org" || password !== "react") {
-      swal(<h2>Credenciales inválidas</h2>);
+      alert("Credenciales inválidas");
     } else {
       axios
         .post(PATH_API_ALKEMI, { email, password })
         .then((result) => {
-          console.log(result.data);
-          swal(
-            <h2>
-              Credenciales correctas! Estamos listos para enviar la información
-            </h2>
+          console.log(
+            "Credenciales correctas! Estamos listos para enviar la información"
           );
-
+          console.log(result.data);
           const tokenRecibido = result.data.token;
           localStorage.setItem("token", tokenRecibido);
-          localStorage.setItem("miNombre", "Gustavo caradonna");
+          navi("/listado");
         })
         .catch((err) => {
           console.log(err);
@@ -59,9 +59,4 @@ export function Login() {
       </form>
     </>
   );
-}
-
-//funcion 2 de un mismo componente
-export function HolaReact() {
-  return <h1>Hola mundo react</h1>;
 }
