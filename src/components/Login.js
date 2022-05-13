@@ -1,6 +1,6 @@
 import axios from "axios";
 // import swal from "@sweetalert/with-react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Navigate } from "react-router-dom";
 
 export function Login() {
   const navi = useNavigate();
@@ -38,9 +38,13 @@ export function Login() {
         });
     }
   };
+  const token = localStorage.getItem("token");
 
   return (
     <>
+      <br />
+      {token && <Navigate to={"/listado"} />}
+
       <h2>Formulario de login</h2>
       <form onSubmit={submitHandler}>
         <label>

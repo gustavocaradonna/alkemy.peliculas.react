@@ -14,7 +14,7 @@ import bootstrap from "bootstrap/dist/css/bootstrap.min.css";
 function App() {
   return (
     <>
-      {/* <Header /> */}
+      <Header />
 
       <div className="container">
         <Routes>
@@ -23,7 +23,7 @@ function App() {
         </Routes>
       </div>
 
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 }

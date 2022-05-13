@@ -1,6 +1,9 @@
 export function Footer() {
   return (
-    <footer>
+    <footer className="container">
+      <br />
+      <br />
+      <br />
       <nav>
         <ul>
           <li>
@@ -10,9 +13,8 @@ export function Footer() {
           </li>
         </ul>
       </nav>
-      <button className="btn btn-primary">test</button>
 
-      <p>Copyright gmc!</p>
+      <p>My footer - Copyright gmc!</p>
     </footer>
   );
 }
