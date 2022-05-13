@@ -28,6 +28,7 @@ export function Login() {
           console.log(
             "Credenciales correctas! Estamos listos para enviar la información"
           );
+          // swal("Funciona ok gus?");
           console.log(result.data);
           const tokenRecibido = result.data.token;
           localStorage.setItem("token", tokenRecibido);

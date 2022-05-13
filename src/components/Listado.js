@@ -6,7 +6,6 @@ export function Listado() {
 
   useEffect(() => {
     const token = localStorage.getItem("token");
-    console.log(token);
     if (token === null) {
       navi("/");
     }
