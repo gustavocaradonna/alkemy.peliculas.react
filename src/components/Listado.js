@@ -1,15 +1,26 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate, Link, Navigate } from "react-router-dom";
+import axios from "axios";
 
 export function Listado() {
   const token = localStorage.getItem("token");
-
+  const [moviesList, setMoviesList] = useState([]);
   // useEffect(() => {
   //   if (token === null) {
   //     navi("/");
   //   }
   // });
   // const navi = useNavigate();
+  useEffect(() => {
+    const endPoint =
+      "https://api.themoviedb.org/3/discover/movie?api_key=eb4b4d4c70bdc53fa1ac4ee02b47664e&language=es-ES&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_watch_monetization_types=flatrate";
+    axios.get(endPoint).then((res) => {
+      const apiData = res.data;
+      setMoviesList(apiData.results);
+    });
+  }, []);
+
+  console.log(moviesList);
 
   return (
     <>
