@@ -1,7 +1,6 @@
 import axios from "axios";
 // import swal from "@sweetalert/with-react";
 import { useNavigate } from "react-router-dom";
-import { Link } from "react-router-dom";
 
 export function Login() {
   const navi = useNavigate();
@@ -55,8 +54,11 @@ export function Login() {
           <input type="password" name="password" />
         </label>
         <br />
+        <br />
 
-        <button type="submit">Ingresar</button>
+        <button type="submit" className="btn btn-danger">
+          Ingresar
+        </button>
       </form>
     </>
   );

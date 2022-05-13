@@ -10,6 +10,8 @@ export function Footer() {
           </li>
         </ul>
       </nav>
+      <button className="btn btn-primary">test</button>
+
       <p>Copyright gmc!</p>
     </footer>
   );
