@@ -1,37 +1,57 @@
 import { Navigate } from "react-router-dom";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
+import axios from "axios";
 
 export function Detalle() {
   const token = sessionStorage.getItem("token");
   let query = new URLSearchParams(window.location.search);
   let idPelicula = query.get("idPelicula");
 
+  const [peli, setPeli] = useState(null);
+
   useEffect(() => {
-    console.log(idPelicula);
+    const endPointPeli = `https://api.themoviedb.org/3/movie/${idPelicula}?api_key=eb4b4d4c70bdc53fa1ac4ee02b47664e&language=es-ES`;
+    axios
+      .get(endPointPeli)
+      .then((response) => {
+        const detallesData = response.data;
+        setPeli(detallesData);
+        console.log(detallesData);
+      })
+      .catch((err) => {
+        alert("error");
+      });
   }, [idPelicula]);
 
   return (
     <>
       {!token && <Navigate to={"/"} />}
-      <h2>Mi detalle</h2>
-      <div className="row">
-        <div className="col-4">imagen peli</div>
-        <div className="col-8">
-          <h5>Titulo</h5>
-          <h5>Genero</h5>
-          <h5>Actores</h5>
-          <p>
-            Sinopsis: Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-            Neque voluptatem laborum sed vero sequi natus corporis assumenda
-            omnis repudiandae suscipit adipisci nostrum, explicabo ullam
-            repellat aliquid id aliquam odio consequatur?Lorem ipsum dolor sit
-            amet consectetur adipisicing elit. Ipsam natus, iste deserunt
-            eligendi, animi, voluptatem facere hic nulla id veniam iusto
-            temporibus perspiciatis. Consectetur cumque, repellat nisi excepturi
-            quia dignissimos?
-          </p>
+      <h2>Detalle </h2>
+      {peli && (
+        <div className="row">
+          <div className="col-4">
+            <img
+              src={`https://image.tmdb.org/t/p/w500/${peli.poster_path}`}
+              className="card-img-top"
+              alt="..."
+            />
+          </div>
+          <div className="col-8">
+            <h5>Titulo: {peli.title}</h5>
+            <h5>Fecha de estreno: {peli.release_date} </h5>
+            {/* <h5>Género: {peli.genres[0].name}</h5> */}
+            <h5>
+              Género:{" "}
+              {peli.genres.map((cadaGenero) => (
+                <span key={cadaGenero.id}>{cadaGenero.name + " - "}</span>
+              ))}
+            </h5>
+
+            <h5 className="">Sinopsis:</h5>
+            <p>{peli.overview}</p>
+          </div>
         </div>
-      </div>
+      )}
     </>
   );
 }

@@ -58,7 +58,7 @@ export function Listado() {
                     to={`/detalle?idPelicula=${cadaPeli.id}`}
                     className="btn btn-primary"
                   >
-                    Más información
+                    Detalle
                   </Link>
                 </div>
               </div>
