@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
-import { useNavigate, Link, Navigate } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import axios from "axios";
 // import swal from "@sweetalert/with-react";
 
 export function Listado() {
-  const token = localStorage.getItem("token");
+  const token = sessionStorage.getItem("token");
   const [moviesList, setMoviesList] = useState([]);
   // useEffect(() => {
   //   if (token === null) {

@@ -30,7 +30,7 @@ export function Login() {
           // swal("Funciona ok gus?");
           console.log(result.data);
           const tokenRecibido = result.data.token;
-          localStorage.setItem("token", tokenRecibido);
+          sessionStorage.setItem("token", tokenRecibido);
           navi("/listado");
         })
         .catch((err) => {
@@ -38,7 +38,7 @@ export function Login() {
         });
     }
   };
-  const token = localStorage.getItem("token");
+  const token = sessionStorage.getItem("token");
 
   return (
     <>

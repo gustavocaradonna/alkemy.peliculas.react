@@ -3,19 +3,6 @@ import { Link } from "react-router-dom";
 export function Header() {
   return (
     <header>
-      {/* <nav>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/listado">Listado</Link>
-          </li>
-          <li>
-            <Link to="/contacto">Contacto</Link>
-          </li>
-        </ul>
-      </nav> */}
       <div className="container">
         <nav className="navbar navbar-light bg-light">
           <div className="container-fluid">
@@ -30,9 +17,11 @@ export function Header() {
             <Link to="/contacto" className="navbar-brand mb-0 h1">
               Contacto
             </Link>
+
             <Link to="/testing" className="navbar-brand mb-0 h1">
               test
             </Link>
+
             <Link to="/testing2" className="navbar-brand mb-0 h1">
               testing
             </Link>
