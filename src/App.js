@@ -15,8 +15,9 @@ import bootstrap from "bootstrap/dist/css/bootstrap.min.css";
 function App() {
   return (
     <>
-      <Header />
-      <div className="container">
+      <div className="container bg-dark">
+        <Header />
+
         <Routes>
           <Route path="/" element={<Login />} />
           <Route path="/listado" element={<Listado />} />

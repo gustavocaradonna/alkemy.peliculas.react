@@ -26,7 +26,7 @@ export function Detalle() {
   return (
     <>
       {!token && <Navigate to={"/"} />}
-      <h2>Detalle </h2>
+      {/* <h2 className="text-light">-Detalle </h2> */}
       {peli && (
         <div className="row">
           <div className="col-4">
@@ -36,8 +36,9 @@ export function Detalle() {
               alt="..."
             />
           </div>
-          <div className="col-8">
-            <h5>Titulo: {peli.title}</h5>
+          <div className="col-8 text-light">
+            <h1> {peli.title}</h1>
+            <br />
             <h5>Fecha de estreno: {peli.release_date} </h5>
             {/* <h5>Género: {peli.genres[0].name}</h5> */}
             <h5>
@@ -46,7 +47,7 @@ export function Detalle() {
                 <span key={cadaGenero.id}>{cadaGenero.name + " - "}</span>
               ))}
             </h5>
-
+            <br />
             <h5 className="">Sinopsis:</h5>
             <p>{peli.overview}</p>
           </div>

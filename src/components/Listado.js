@@ -30,15 +30,13 @@ export function Listado() {
   return (
     <>
       {!token && <Navigate to={"/"} />}
-      <div className="container">
-        <h1 className="bg-danger justify-content-center row align">NetFlix!</h1>
-      </div>
+      <h1 className="bg-primary justify-content-center row align">NetFlix!</h1>
       {/* {estructura base} */}
       <div className="row">
         {moviesList.map((cadaPeli, index) => {
           return (
             //carta
-            <div className="col-3" key={index}>
+            <div className="col-3 bg-dark" key={index}>
               <div className="card my-3">
                 <img
                   src={`https://image.tmdb.org/t/p/w500/${cadaPeli.poster_path}`}
