@@ -31,9 +31,7 @@ export function Listado() {
     <>
       {!token && <Navigate to={"/"} />}
       <div className="container">
-        <h1 className="bg-success justify-content-center row align">
-          NetFlix!
-        </h1>
+        <h1 className="bg-danger justify-content-center row align">NetFlix!</h1>
       </div>
       {/* {estructura base} */}
       <div className="row">

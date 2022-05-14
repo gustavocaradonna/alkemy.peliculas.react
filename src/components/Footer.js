@@ -1,20 +1,15 @@
 export function Footer() {
   return (
-    <footer className="container">
-      <br />
-      <br />
-      <br />
-      <nav>
-        <ul>
-          <li>
-            <a href="https://instagram.com" rel="noopener noreferrer">
-              My Instagram
-            </a>
-          </li>
-        </ul>
-      </nav>
+    <footer>
+      <div className="container bg-danger   ">
+        <nav className="justify-content-center row align">
+          <a href="https://instagram.com" rel="noopener noreferrer">
+            My Instagram
+          </a>
+        </nav>
 
-      <p>My footer - Copyright gmc!</p>
+        <h3>My footer - Copyright gmc!</h3>
+      </div>
     </footer>
   );
 }
