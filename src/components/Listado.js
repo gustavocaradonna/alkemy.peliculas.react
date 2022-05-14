@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate, Link, Navigate } from "react-router-dom";
 import axios from "axios";
+// import swal from "@sweetalert/with-react";
 
 export function Listado() {
   const token = localStorage.getItem("token");
@@ -14,74 +15,58 @@ export function Listado() {
   useEffect(() => {
     const endPoint =
       "https://api.themoviedb.org/3/discover/movie?api_key=eb4b4d4c70bdc53fa1ac4ee02b47664e&language=es-ES&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_watch_monetization_types=flatrate";
-    axios.get(endPoint).then((res) => {
-      const apiData = res.data;
-      setMoviesList(apiData.results);
-    });
-  }, []);
 
-  console.log(moviesList);
+    axios
+      .get(endPoint)
+      .then((res) => {
+        const apiData = res.data;
+        setMoviesList(apiData.results);
+      })
+      .catch((error) => {
+        alert(<h2>Hubo errores, intenta mas tarde!</h2>);
+      });
+  }, [setMoviesList]);
 
   return (
     <>
       {!token && <Navigate to={"/"} />}
       <div className="container">
         <h1 className="bg-success justify-content-center row align">
-          Estas Logueado
+          NetFlix!
         </h1>
       </div>
-
-      <br></br>
-
-      <div className="card-group">
-        <div className="card">
-          <img src="..." className="card-img-top" alt="..." />
-          <div className="card-body">
-            <h5 className="card-title">Card title</h5>
-            <p className="card-text">
-              This is a wider card with supporting text below as a natural
-              lead-in to additional content. This content is a little bit
-              longer.
-            </p>
-          </div>
-          <div className="card-footer">
-            <small className="text-muted">Last updated 3 mins ago</small>
-          </div>
-        </div>
-        <div className="card">
-          <img src="..." className="card-img-top" alt="..." />
-          <div className="card-body">
-            <h5 className="card-title">Card title</h5>
-            <p className="card-text">
-              This card has supporting text below as a natural lead-in to
-              additional content.
-            </p>
-          </div>
-          <div className="card-footer">
-            <small className="text-muted">Last updated 3 mins ago</small>
-          </div>
-        </div>
-        <div className="card">
-          <img src="asd" className="card-img-top" alt="asd" />
-          <div className="card-body">
-            <h5 className="card-title">Card title</h5>
-            <p className="card-text">
-              This is a wider card with supporting text below as a natural
-              lead-in to additional content. This card has even longer content
-              than the first to show that equal height action.
-            </p>
-          </div>
-          <div className="card-footer">
-            <small className="text-muted">Last updated 3 mins ago</small>
-          </div>
-        </div>
+      {/* {estructura base} */}
+      <div className="row">
+        {moviesList.map((cadaPeli, index) => {
+          return (
+            //carta
+            <div className="col-3" key={index}>
+              <div className="card my-3">
+                <img
+                  src={`https://image.tmdb.org/t/p/w500/${cadaPeli.poster_path}`}
+                  className="card-img-top"
+                  alt="..."
+                />
+                <div className="card-body">
+                  <h5 className="card-title">
+                    {cadaPeli.title.substring(0, 10)}
+                  </h5>
+                  <p className="card-text">
+                    {cadaPeli.overview.substring(0, 50)}
+                  </p>
+                  <Link
+                    to={`/detalle?idPelicula=${cadaPeli.id}`}
+                    className="btn btn-primary"
+                  >
+                    Más información
+                  </Link>
+                </div>
+              </div>
+            </div>
+          );
+        })}
       </div>
-
       <br />
-
-      <Link to="asd" className="btn btn-danger">
-        Ver datos
-      </Link>
     </>
   );
 }
