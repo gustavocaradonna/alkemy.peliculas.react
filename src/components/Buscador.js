@@ -7,6 +7,7 @@ export function Buscador() {
   console.log("-1-dev");
 
   console.log("tercer");
+  console.log("cuart");
 
   return;
 }
