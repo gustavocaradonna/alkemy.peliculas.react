@@ -3,5 +3,8 @@ export function Buscador() {
   console.log("2 CAMBIOs DESDE COMPONENTS/SEARCH");
 
   console.log("cs");
+
+  console.log("-1-dev");
+
   return;
 }
