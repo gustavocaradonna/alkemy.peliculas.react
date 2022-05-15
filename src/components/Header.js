@@ -39,6 +39,7 @@ export function Header() {
           </div>
         </nav>
       </div>
+      {/* <div class="divider py-1 bg-light"></div> */}
     </header>
   );
 }

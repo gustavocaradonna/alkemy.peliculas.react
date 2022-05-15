@@ -45,25 +45,48 @@ export function Login() {
       <br />
       {token && <Navigate to={"/listado"} />}
 
-      <h2>Formulario de login</h2>
-      <form onSubmit={submitHandler}>
-        <label>
-          <span>Correo electrónico:</span> <br />
-          <input type="text" name="email" />
-        </label>
+      <div class="container">
+        <div class="row">
+          <div class="col">Column</div>
+          <div class="col">
+            <h2 className="text-light">Formulario de login</h2>
+            <form onSubmit={submitHandler}>
+              <label>
+                <span>Correo electrónico:</span> <br />
+                <input type="text" name="email" />
+              </label>
+
+              <br />
+              <label>
+                <span>Contraseña:</span> <br />
+                <input type="password" name="password" />
+              </label>
+              <br />
+              <br />
+
+              <button type="submit" className="btn btn-danger">
+                Ingresar
+              </button>
+            </form>
+          </div>
+          <div class="col">Column</div>
+        </div>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
 
         <br />
-        <label>
-          <span>Contraseña:</span> <br />
-          <input type="password" name="password" />
-        </label>
-        <br />
+
         <br />
 
-        <button type="submit" className="btn btn-danger">
-          Ingresar
-        </button>
-      </form>
+        <br />
+      </div>
     </>
   );
 }

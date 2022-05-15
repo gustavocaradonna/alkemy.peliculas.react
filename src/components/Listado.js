@@ -38,17 +38,20 @@ export function Listado() {
             //carta
             <div className="col-3 bg-dark" key={index}>
               <div className="card my-3">
-                <img
-                  src={`https://image.tmdb.org/t/p/w500/${cadaPeli.poster_path}`}
-                  className="card-img-top"
-                  alt="..."
-                />
+                <Link to={`/detalle?idPelicula=${cadaPeli.id}`}>
+                  <img
+                    src={`https://image.tmdb.org/t/p/w500/${cadaPeli.poster_path}`}
+                    className="card-img-top"
+                    alt="..."
+                  />
+                </Link>
+
                 <div className="card-body">
                   <h5 className="card-title">
-                    {cadaPeli.title.substring(0, 10)}
+                    {cadaPeli.title.substring(0, 25)}
                   </h5>
                   <p className="card-text">
-                    {cadaPeli.overview.substring(0, 50)}
+                    {cadaPeli.overview.substring(0, 67)}...
                   </p>
                   <Link
                     to={`/detalle?idPelicula=${cadaPeli.id}`}
