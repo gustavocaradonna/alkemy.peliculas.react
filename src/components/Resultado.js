@@ -1,39 +1,36 @@
-import { useEffect, useState } from "react";
-import { Link, Navigate } from "react-router-dom";
+import React from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
-// import swal from "@sweetalert/with-react";
+import { Link } from "react-router-dom";
 
-export function Listado() {
-  const token = sessionStorage.getItem("token");
-  const [moviesList, setMoviesList] = useState([]);
-  // useEffect(() => {
-  //   if (token === null) {
-  //     navi("/");
-  //   }
-  // });
-  // const navi = useNavigate();
+export function Resultado() {
+  let query = new URLSearchParams(window.location.search);
+  let keyword = query.get("keyword");
+
+  const [moviesResults, setMoviesResults] = useState([]);
+
   useEffect(() => {
-    const endPoint =
-      "https://api.themoviedb.org/3/discover/movie?api_key=eb4b4d4c70bdc53fa1ac4ee02b47664e&language=es-ES&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_watch_monetization_types=flatrate";
+    const endPoint = `https://api.themoviedb.org/3/search/movie?api_key=eb4b4d4c70bdc53fa1ac4ee02b47664e&language=en-US&page=1&include_adult=false&query=${keyword}`;
 
     axios
       .get(endPoint)
-      .then((res) => {
-        const apiData = res.data;
-        setMoviesList(apiData.results);
+      .then((response) => {
+        const apiData = response.data.results;
+        setMoviesResults(apiData);
+
+        // setMoviesResults(apiData.results);
       })
       .catch((error) => {
         alert(<h2>Hubo errores, intenta mas tarde!</h2>);
       });
-  }, [setMoviesList]);
+  }, [moviesResults]);
 
   return (
     <>
-      {!token && <Navigate to={"/"} />}
-      <h1 className="bg-primary justify-content-center row align">NetFlix!</h1>
-      {/* {estructura base} */}
+      <h2 className="text-light">Tu búsqueda: {keyword}</h2>
+
       <div className="row">
-        {moviesList.map((cadaPeli, index) => {
+        {moviesResults.map((cadaPeli, index) => {
           return (
             //carta
             <div className="col-3 bg-dark" key={index}>
@@ -64,7 +61,6 @@ export function Listado() {
           );
         })}
       </div>
-      <br />
     </>
   );
 }

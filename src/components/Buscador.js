@@ -1,16 +1,23 @@
+import { useNavigate } from "react-router-dom";
+
 export function Buscador() {
+  const navi = useNavigate();
+
   const submitHandler = (e) => {
     e.preventDefault();
-    const palabra = e.currentTarget.keyword.value;
-    console.log(palabra);
+    const keyword = e.currentTarget.keyword.value.trim();
+    console.log(keyword);
 
-    if (palabra === "") {
+    if (keyword.length === 0) {
       alert("Ingrese una palabra");
+    } else {
+      e.currentTarget.keyword.value = "";
+      navi(`/resultado?keyword=${keyword}`);
     }
   };
 
   return (
-    // <div className="collapse navbar-collapse" id="navbarSupportedContent">
+    // <div className="collapse navbar-collapse">
     //   <ul className="navbar-nav me-auto mb-2 mb-lg-0"></ul>
     //   <form className="d-flex" onSubmit={submitHandler}>
     //     <input
@@ -18,6 +25,7 @@ export function Buscador() {
     //       type="text"
     //       placeholder="Escriba una película"
     //       aria-label="Search"
+    //       name="keyword"
     //     />
     //     <button className="btn btn-outline-primary" type="submit">
     //       Buscar

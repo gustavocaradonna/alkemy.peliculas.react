@@ -11,6 +11,7 @@ import { Routes, Route } from "react-router-dom";
 //styles
 // import "./css/app.css";
 import bootstrap from "bootstrap/dist/css/bootstrap.min.css";
+import { Resultado } from "./components/Resultado";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path="/" element={<Login />} />
           <Route path="/listado" element={<Listado />} />
           <Route path="/detalle" element={<Detalle />} />
+          <Route path="/resultado" element={<Resultado />} />
         </Routes>
 
         <Footer />

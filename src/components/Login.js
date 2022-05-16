@@ -69,7 +69,7 @@ export function Login() {
               </button>
             </form>
           </div>
-          <div class="col">Column</div>
+          <div className="col">Column</div>
         </div>
         <br />
         <br />
