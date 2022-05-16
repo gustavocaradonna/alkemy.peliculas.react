@@ -1,6 +1,7 @@
 import { Navigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { Header } from "./Header";
 
 export function Detalle() {
   const token = sessionStorage.getItem("token");
@@ -27,6 +28,9 @@ export function Detalle() {
     <>
       {!token && <Navigate to={"/"} />}
       {/* <h2 className="text-light">-Detalle </h2> */}
+
+      <Header />
+
       {peli && (
         <div className="row">
           <div className="col-4">

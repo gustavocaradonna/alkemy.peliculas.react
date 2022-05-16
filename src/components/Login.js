@@ -47,7 +47,6 @@ export function Login() {
 
       <div className="container">
         <div className="row">
-          <div className="col">Column</div>
           <div className="col">
             <h2 className="text-light">Formulario de login</h2>
             <form onSubmit={submitHandler}>

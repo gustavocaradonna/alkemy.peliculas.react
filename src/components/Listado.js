@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link, Navigate } from "react-router-dom";
 import axios from "axios";
 // import swal from "@sweetalert/with-react";
+import { Header } from "./Header";
 
 export function Listado() {
   const token = sessionStorage.getItem("token");
@@ -30,6 +31,7 @@ export function Listado() {
   return (
     <>
       {!token && <Navigate to={"/"} />}
+      <Header />
       <h1 className="bg-primary justify-content-center row align">NetFlix!</h1>
       {/* {estructura base} */}
       <div className="row">

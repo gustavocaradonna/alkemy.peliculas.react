@@ -2,6 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import { Header } from "./Header";
 
 export function Resultado() {
   let query = new URLSearchParams(window.location.search);
@@ -27,6 +28,7 @@ export function Resultado() {
 
   return (
     <>
+      <Header />
       <h2 className="text-light">Tu búsqueda: {keyword}</h2>
 
       <div className="row">

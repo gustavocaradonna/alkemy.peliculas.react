@@ -17,7 +17,7 @@ function App() {
   return (
     <>
       <div className="container bg-dark">
-        <Header />
+        {/* <Header /> */}
 
         <Routes>
           <Route path="/" element={<Login />} />
