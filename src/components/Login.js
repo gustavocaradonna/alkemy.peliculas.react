@@ -2,6 +2,9 @@ import axios from "axios";
 // import swal from "@sweetalert/with-react";
 import { useNavigate, Navigate } from "react-router-dom";
 
+//css
+import "../css/app.css";
+
 export function Login() {
   const navi = useNavigate();
   const submitHandler = (e) => {
@@ -42,7 +45,6 @@ export function Login() {
 
   return (
     <>
-      <br />
       {token && <Navigate to={"/listado"} />}
 
       <div className="container">
@@ -71,43 +73,40 @@ export function Login() {
         </div> */}
 
         {/* principio */}
-        <section class="vh-100 gradient-custom">
-          <div class="container py-5 h-100">
-            <div class="row d-flex justify-content-center align-items-center h-100">
-              <div class="col-12 col-md-8 col-lg-6 col-xl-5">
-                <div class="card bg-dark text-white">
-                  <div class="card-body p-5 text-center">
-                    <div class="mb-md-5 mt-md-4 pb-5">
-                      <h2 class="fw-bold mb-2 text-uppercase">
+        <section className="vh-100 gradient-custom">
+          <div className="container py-5 h-100">
+            <div className="row d-flex justify-content-center align-items-center h-100   aa22aa">
+              <div className="col-12 col-md-8 col-lg-6 col-xl-5   ">
+                <div className="card bg-dark text-white ">
+                  <div className="card-body p-5 text-center">
+                    <div className="mb-md-5 mt-md-4 pb-5">
+                      <h2 className="fw-bold mb-2 text-uppercase">
                         Iniciar sesión
                       </h2>
-                      <p class="text-white-50 mb-5">
+                      <br />
+                      {/* <p class="text-white-50 mb-5">
                         Ingresá tu email y clave.
-                      </p>
+                      </p> */}
 
                       <form onSubmit={submitHandler}>
-                        <div class="form-outline form-white mb-4">
+                        <div className="form-outline form-white mb-4">
                           <input
                             type="email"
                             id="typeEmailX"
-                            class="form-control form-control-lg"
+                            className="form-control form-control-lg"
                             name="email"
+                            placeholder="Ingrese email"
                           />
-                          <label class="form-label" for="typeEmailX">
-                            Email
-                          </label>
                         </div>
 
-                        <div class="form-outline form-white mb-4">
+                        <div className="form-outline form-white mb-4">
                           <input
                             type="password"
                             id="typePasswordX"
-                            class="form-control form-control-lg"
+                            className="form-control form-control-lg"
                             name="password"
+                            placeholder="Ingrese clave"
                           />
-                          <label class="form-label" for="typePasswordX">
-                            Clave
-                          </label>
                         </div>
 
                         {/* <p class="small mb-5 pb-lg-2">
@@ -117,22 +116,22 @@ export function Login() {
                         </p> */}
 
                         <button
-                          class="btn btn-outline-light btn-lg px-5"
+                          className="btn btn-outline-light btn-lg px-5"
                           type="submit"
                         >
                           Ingresar
                         </button>
                       </form>
 
-                      <div class="d-flex justify-content-center text-center mt-4 pt-1">
+                      <div className="d-flex justify-content-center text-center mt-4 pt-1">
                         <a href="#!" class="text-white">
-                          <i class="fab fa-facebook-f fa-lg"></i>
+                          <i className="fab fa-facebook-f fa-lg"></i>
                         </a>
                         <a href="#!" class="text-white">
-                          <i class="fab fa-twitter fa-lg mx-4 px-2"></i>
+                          <i className="fab fa-twitter fa-lg mx-4 px-2"></i>
                         </a>
-                        <a href="#!" class="text-white">
-                          <i class="fab fa-google fa-lg"></i>
+                        <a href="#!" className="text-white">
+                          <i className="fab fa-google fa-lg"></i>
                         </a>
                       </div>
                     </div>
@@ -152,9 +151,6 @@ export function Login() {
           </div>
         </section>
 
-        <br />
-        <br />
-        <br />
         {/* 
         //fin */}
       </div>

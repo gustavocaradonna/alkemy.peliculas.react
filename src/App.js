@@ -6,18 +6,19 @@ import { Listado } from "./components/Listado";
 import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
 import { Detalle } from "./components/Detalle";
+import { Resultado } from "./components/Resultado";
+
 //libraries
 import { Routes, Route } from "react-router-dom";
 //styles
-// import "./css/app.css";
 import bootstrap from "bootstrap/dist/css/bootstrap.min.css";
-import { Resultado } from "./components/Resultado";
+import "./css/app.css";
 
 function App() {
   return (
     <>
       {/* <div className="container bg-dark"> */}
-      <div className="container bg-dark">
+      <div className="container  bg-dark">
         {/* <Header /> */}
 
         <Routes>

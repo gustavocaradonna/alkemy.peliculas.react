@@ -35,7 +35,7 @@ export function Resultado() {
         {moviesResults.map((cadaPeli, index) => {
           return (
             //carta
-            <div className="col-3 bg-dark" key={index}>
+            <div className="col-2 bg-dark" key={index}>
               <div className="card my-3">
                 <Link to={`/detalle?idPelicula=${cadaPeli.id}`}>
                   <img

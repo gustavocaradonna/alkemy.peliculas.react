@@ -33,8 +33,12 @@ export function Detalle() {
 
       {peli && (
         <div className="row">
+          <div className="divider py-1 bg-light"></div>
+
+          {/* <div className="divider py-1 bg-success"></div> */}
+
           <div className="col-4">
-            <div className="divider py-1 bg-success"></div>
+            {/* <div className="divider py-1 bg-success"></div> */}
 
             <img
               src={`https://image.tmdb.org/t/p/w500/${peli.poster_path}`}

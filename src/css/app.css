@@ -1,5 +1,12 @@
-body{
+#root{
     background-color: darkslategrey;
-    font-family: "comic Sans MS";
+    /* font-family: "comic Sans MS"; */
+
     }
 
+h1{
+    background-color: red;
+    font-family: "comic Sans MS"; 
+    border-radius: 10px;
+
+}
