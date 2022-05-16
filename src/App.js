@@ -16,6 +16,7 @@ import { Resultado } from "./components/Resultado";
 function App() {
   return (
     <>
+      {/* <div className="container bg-dark"> */}
       <div className="container bg-dark">
         {/* <Header /> */}
 
