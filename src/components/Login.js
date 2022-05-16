@@ -45,10 +45,10 @@ export function Login() {
       <br />
       {token && <Navigate to={"/listado"} />}
 
-      <div class="container">
-        <div class="row">
-          <div class="col">Column</div>
-          <div class="col">
+      <div className="container">
+        <div className="row">
+          <div className="col">Column</div>
+          <div className="col">
             <h2 className="text-light">Formulario de login</h2>
             <form onSubmit={submitHandler}>
               <label>
