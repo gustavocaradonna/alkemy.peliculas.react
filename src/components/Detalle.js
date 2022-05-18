@@ -7,11 +7,12 @@ export function Detalle() {
   const token = sessionStorage.getItem("token");
   let query = new URLSearchParams(window.location.search);
   let idPelicula = query.get("idPelicula");
+  const API_KEY = "eb4b4d4c70bdc53fa1ac4ee02b47664e";
 
   const [peli, setPeli] = useState(null);
 
   useEffect(() => {
-    const endPointPeli = `https://api.themoviedb.org/3/movie/${idPelicula}?api_key=eb4b4d4c70bdc53fa1ac4ee02b47664e&language=es-ES`;
+    const endPointPeli = `https://api.themoviedb.org/3/movie/${idPelicula}?api_key=${API_KEY}&language=es-ES`;
     axios
       .get(endPointPeli)
       .then((response) => {

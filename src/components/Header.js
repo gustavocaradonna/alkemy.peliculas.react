@@ -29,7 +29,7 @@ export function Header() {
           <Buscador />
         </nav>
       </div>
-      {/* <div class="divider py-1 bg-light"></div> */}
+      {/* <div className="divider py-1 bg-light"></div> */}
     </header>
   );
 }

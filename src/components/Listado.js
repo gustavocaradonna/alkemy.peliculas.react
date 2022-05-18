@@ -39,7 +39,7 @@ export function Listado() {
           return (
             //carta
             <div className="col-3 bg-dark" key={index}>
-              <div className="card my-3">
+              <div className="card my-3  desenfoque-gus">
                 <Link to={`/detalle?idPelicula=${cadaPeli.id}`}>
                   <img
                     src={`https://image.tmdb.org/t/p/w500/${cadaPeli.poster_path}`}
@@ -47,6 +47,8 @@ export function Listado() {
                     alt="..."
                   />
                 </Link>
+                <button className="favourite-btn-gus">🖤</button>
+
                 <div className="card-body">
                   <h5 className="card-title">
                     {cadaPeli.title.substring(0, 25)}

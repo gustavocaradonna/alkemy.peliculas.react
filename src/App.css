@@ -36,3 +36,48 @@
     transform: rotate(360deg);
   }
 }
+
+.favourite-btn-gus{
+width: 40px;
+height: 40px;
+background-color: rgb(255, 255, 255);
+border-radius: 30px;
+display: flex;
+justify-content: center;
+align-items: center;
+position: absolute;
+right: 10px ;
+top: 10px;
+border: none;
+font-size: 22px;
+
+transition: transform 0.3s;
+}
+
+.favourite-btn-gus:hover {
+  width: 40px;
+  height: 40px;
+  background-color: rgb(6, 6, 6);
+  border-radius: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: 10px ;
+  top: 10px;
+  border: none;
+  font-size: 22px;
+
+  transform: scale(1.5);
+}
+
+.desenfoque-gus{
+  transition: transform 0.3s;
+  /* filter: blur(2px); */
+}
+
+.desenfoque-gus:hover{
+  transform: scale(1.07);
+  /* filter: blur(0px); */
+
+}

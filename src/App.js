@@ -15,6 +15,10 @@ import bootstrap from "bootstrap/dist/css/bootstrap.min.css";
 import "./css/app.css";
 
 function App() {
+  const addOrRemoveFromFavs = () => {
+    console.log("funcionó!");
+  };
+
   return (
     <>
       {/* <div className="container bg-dark"> */}

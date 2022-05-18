@@ -3,7 +3,7 @@ import axios from "axios";
 import { useNavigate, Navigate } from "react-router-dom";
 
 //css
-import "../css/app.css";
+import "../css/login.css";
 
 export function Login() {
   const navi = useNavigate();
@@ -74,11 +74,11 @@ export function Login() {
 
         {/* principio */}
         <section className="vh-100 gradient-custom">
-          <div className="container py-5 h-100">
-            <div className="row d-flex justify-content-center align-items-center h-100   aa22aa">
+          <div className="container py-5 h-100 ">
+            <div className="row d-flex justify-content-center align-items-center h-100   ">
               <div className="col-12 col-md-8 col-lg-6 col-xl-5   ">
                 <div className="card bg-dark text-white ">
-                  <div className="card-body p-5 text-center">
+                  <div className="card-body p-5 text-center aa22aa">
                     <div className="mb-md-5 mt-md-4 pb-5">
                       <h2 className="fw-bold mb-2 text-uppercase">
                         Iniciar sesión
@@ -124,10 +124,10 @@ export function Login() {
                       </form>
 
                       <div className="d-flex justify-content-center text-center mt-4 pt-1">
-                        <a href="#!" class="text-white">
+                        <a href="#!" className="text-white">
                           <i className="fab fa-facebook-f fa-lg"></i>
                         </a>
-                        <a href="#!" class="text-white">
+                        <a href="#!" className="text-white">
                           <i className="fab fa-twitter fa-lg mx-4 px-2"></i>
                         </a>
                         <a href="#!" className="text-white">
