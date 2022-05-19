@@ -45,7 +45,7 @@ export function Buscador() {
             placeholder="Escribe una palabra clave..."
           />
         </label>
-        <button className="btn btn-outline-primary  " type="submit">
+        <button className="btn btn-outline-danger  " type="submit">
           Buscar
         </button>
       </form>

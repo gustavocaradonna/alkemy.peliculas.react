@@ -34,12 +34,24 @@ export function Detalle() {
 
       {peli && (
         <div className="row">
-          <div className="divider py-1 bg-light"></div>
+          <img
+            src="https://mir-s3-cdn-cf.behance.net/project_modules/fs/ff25a865063407.5b2527aae74a8.gif"
+            alt="netflix"
+          />
 
-          {/* <div className="divider py-1 bg-success"></div> */}
+          {/* poner boton de atras (me falta posicionarlo) */}
+          {/* <button
+            className="back-btn-gus"
+            onClick={() => console.log("Volviste atras! ^^")}
+          >
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/32/32170.png"
+              alt="altqseyo"
+            />
+          </button> */}
 
           <div className="col-4">
-            {/* <div className="divider py-1 bg-success"></div> */}
+            <div className="divider py-1 bg-light"></div>
 
             <img
               src={`https://image.tmdb.org/t/p/w500/${peli.poster_path}`}

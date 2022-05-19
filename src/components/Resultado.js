@@ -32,6 +32,10 @@ export function Resultado() {
       <h2 className="text-light">Tu búsqueda: {keyword}</h2>
 
       <div className="row">
+        <img
+          src="https://mir-s3-cdn-cf.behance.net/project_modules/fs/ff25a865063407.5b2527aae74a8.gif"
+          alt="altqseyo"
+        />
         {moviesResults.map((cadaPeli, index) => {
           return (
             //carta

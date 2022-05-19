@@ -1,12 +1,16 @@
-#root{
+/* #root{
     background-color: darkslategrey;
     /* font-family: "comic Sans MS"; */
 
-    }
+body {
+  background-color: rgb(18, 45, 45);
+  font-family: "comic Sans MS";
+}
 
-h1{
-    background-color: red;
-    font-family: "comic Sans MS"; 
-    border-radius: 10px;
-
+h1 {
+  background-color: rgb(18, 45, 45);
+  font-family: "comic Sans MS";
+  border-radius: 0px;
+  justify-content: center;
+  justify-items: center;
 }
