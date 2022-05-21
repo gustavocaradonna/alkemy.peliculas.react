@@ -28,7 +28,7 @@ export function Listado(props) {
       .catch((error) => {
         alert(<h2>Hubo errores, intenta mas tarde!</h2>);
       });
-  }, [setMoviesList]);
+  }, []);
 
   return (
     <>

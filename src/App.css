@@ -97,3 +97,26 @@
 
   transition: transform 0.3s;
 } */
+
+.text-gus {
+  text-align: center;
+  background-color: black;
+  font-size: 32px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.text-gus-bk-white {
+  text-align: center;
+  background-color: rgb(255, 255, 255);
+  font-size: 32px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.text-gus-text-white {
+  text-align: center;
+  color: rgb(255, 255, 255);
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
