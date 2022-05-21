@@ -33,7 +33,8 @@ export function Login() {
           // swal("Funciona ok gus?");
           console.log(result.data);
           const tokenRecibido = result.data.token;
-          sessionStorage.setItem("token", tokenRecibido);
+          console.log(tokenRecibido);
+          sessionStorage.setItem("token", "tokenRecibido");
           navi("/listado");
         })
         .catch((err) => {
