@@ -7,13 +7,6 @@ import { Header } from "./Header";
 export function Listado(props) {
   const token = sessionStorage.getItem("token");
   const [moviesList, setMoviesList] = useState([]);
-  // useEffect(() => {
-  //   if (token === null) {
-  //     navi("/");
-  //   }
-  // });
-  // const navi = useNavigate();
-  // console.log(props);
 
   useEffect(() => {
     const endPoint =
@@ -29,6 +22,10 @@ export function Listado(props) {
         alert(<h2>Hubo errores, intenta mas tarde!</h2>);
       });
   }, []);
+
+  const goToTop = () => {
+    window.scrollTo(0, 0);
+  };
 
   return (
     <>
@@ -82,6 +79,12 @@ export function Listado(props) {
         })}
       </div>
       <br />
+      <div>
+        {" "}
+        <button onClick={goToTop} className="btn-flotante">
+          Up!
+        </button>
+      </div>
     </>
   );
 }

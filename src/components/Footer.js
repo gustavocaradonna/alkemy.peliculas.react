@@ -6,7 +6,7 @@ export function Footer() {
 
         <div className="container bg-dark">
           <nav className="justify-content-center row align">
-            <ul>
+            {/* <ul>
               <li>
                 <br />
                 <a
@@ -28,7 +28,7 @@ export function Footer() {
                   Other links
                 </a>
               </li>
-            </ul>
+            </ul> */}
           </nav>
         </div>
       </footer>
