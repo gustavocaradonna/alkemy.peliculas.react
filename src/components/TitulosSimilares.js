@@ -9,7 +9,7 @@ const TitulosSimilares = (peli) => {
   // console.log("cuantas veces entra aca (fuera del useEffect?");
 
   let tituloBuscado = peli.prop.title;
-  let idPeli = peli.prop.id;
+  // let idPeli = peli.prop.id;
 
   useEffect(() => {
     const endPoint = `https://api.themoviedb.org/3/search/movie?api_key=eb4b4d4c70bdc53fa1ac4ee02b47664e&language=en-US&page=1&include_adult=false&query=${tituloBuscado.substr(

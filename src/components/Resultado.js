@@ -13,7 +13,6 @@ export function Resultado() {
   useEffect(() => {
     const endPoint = `https://api.themoviedb.org/3/search/movie?api_key=eb4b4d4c70bdc53fa1ac4ee02b47664e&language=en-US&page=1&include_adult=false&query=${keyword}`;
 
-    console.log("UNA SOLA VEZ?");
     axios
       .get(endPoint)
       .then((response) => {

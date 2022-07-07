@@ -17,22 +17,6 @@ export function Buscador() {
   };
 
   return (
-    // <div className="collapse navbar-collapse">
-    //   <ul className="navbar-nav me-auto mb-2 mb-lg-0"></ul>
-    //   <form className="d-flex" onSubmit={submitHandler}>
-    //     <input
-    //       className="form-control me-2"
-    //       type="text"
-    //       placeholder="Escriba una película"
-    //       aria-label="Search"
-    //       name="keyword"
-    //     />
-    //     <button className="btn btn-outline-primary" type="submit">
-    //       Buscar
-    //     </button>
-    //   </form>
-    // </div>
-
     <div className="collapse navbar-collapse" id="navbarSupportedContent">
       <ul className="navbar-nav me-auto mb-2 mb-lg-0"></ul>
 
