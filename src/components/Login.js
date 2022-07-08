@@ -2,8 +2,11 @@ import axios from "axios";
 // import swal from "@sweetalert/with-react";
 import { useNavigate, Navigate } from "react-router-dom";
 
+import { gsap } from "gsap";
+
 //css
 import "../css/login.css";
+import { useEffect } from "react";
 
 export function Login() {
   const navi = useNavigate();
@@ -44,6 +47,10 @@ export function Login() {
   };
   const token = sessionStorage.getItem("token");
 
+  useEffect(() => {
+    const bloque = document.querySelector(".aa22aa");
+    gsap.to(bloque, { opacity: 1, duration: 2.5 });
+  }, []);
   return (
     <>
       {token && <Navigate to={"/listado"} />}

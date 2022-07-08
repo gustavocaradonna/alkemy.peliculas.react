@@ -1,7 +1,18 @@
-import { Link } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import { Buscador } from "./Buscador";
+import { useState, useEffect } from "react";
 
 export function Header() {
+  const navi = useNavigate();
+
+  const [log, setLog] = useState(true);
+
+  useEffect(() => {
+    if (!log) {
+      navi("/");
+    }
+  }, [log]);
+
   return (
     <header>
       <></>
@@ -28,6 +39,16 @@ export function Header() {
           {/* <div className="align-items-right"></div> */}
           {/* aca iria el buscador */}
           <Buscador />
+          <button type="button">
+            {" "}
+            <img
+              src="https://www.pngkit.com/png/detail/776-7768559_logout-icon-png-transparent-login-logout-icon-png.png"
+              height="38"
+              width="38"
+              alt="troll"
+              onClick={() => [sessionStorage.clear(), setLog(false)]}
+            />
+          </button>
         </nav>
       </div>
 
