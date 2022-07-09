@@ -29,6 +29,10 @@ const TitulosSimilares = (peli) => {
       });
   }, []);
 
+  const goToTop = () => {
+    window.scrollTo(0, 0);
+  };
+
   return (
     <div>
       <h1 className="text-gus-text-white">Títulos similares</h1>
@@ -39,7 +43,10 @@ const TitulosSimilares = (peli) => {
             //carta
             <div className="col-2 bg-dark" key={index}>
               <div className="card my-3">
-                <Link to={`/detalle?idPelicula=${cadaPeli.id}`}>
+                <Link
+                  to={`/detalle?idPelicula=${cadaPeli.id}`}
+                  onClick={goToTop}
+                >
                   <img
                     src={`https://image.tmdb.org/t/p/w500/${cadaPeli.poster_path}`}
                     className="card-img-top"
@@ -56,6 +63,7 @@ const TitulosSimilares = (peli) => {
                   <Link
                     to={`/detalle?idPelicula=${cadaPeli.id}`}
                     className="btn btn-primary"
+                    onClick={goToTop}
                   >
                     Detalle
                   </Link>

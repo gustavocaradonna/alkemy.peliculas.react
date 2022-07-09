@@ -7,8 +7,26 @@ import { Header } from "./Header";
 export function Listado(props) {
   const token = sessionStorage.getItem("token");
   const [moviesList, setMoviesList] = useState([]);
+  const [slider, setSlider] = useState([]);
+
+  const slider1 = "https://c.tenor.com/aOj7N0TByXQAAAAC/marvel-avengers.gif";
+  const slider2 =
+    "https://www.cuartomundo.cl/wp-content/uploads/2018/02/Avengers-gif.gif";
+  const slider3 =
+    "http://33.media.tumblr.com/0d847b2563d24a84c4bb0554066280d1/tumblr_no1dnyjCnk1rp0vkjo1_500.gif";
+
+  const slider4 = "https://acegif.com/wp-content/gifs/gif-marvel-83.gif";
+  const slider5 =
+    "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/falcon-1533278569.gif?crop=1xw:1xh;center,top&resize=480:*";
+  console.log("ESTOY EN LISTADO FUERA DE USEEFFECT");
 
   useEffect(() => {
+    console.log("ESTOY EN LISTADO");
+    let myArray = [slider1, slider2, slider3, slider4, slider5];
+    let rand = Math.floor(Math.random() * myArray.length);
+    let rValue = myArray[rand];
+    setSlider(rValue);
+
     const endPoint =
       "https://api.themoviedb.org/3/discover/movie?api_key=eb4b4d4c70bdc53fa1ac4ee02b47664e&language=es-ES&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_watch_monetization_types=flatrate";
 
@@ -39,7 +57,7 @@ export function Listado(props) {
           src="https://mir-s3-cdn-cf.behance.net/project_modules/fs/ff25a865063407.5b2527aae74a8.gif"
           alt="netflix"
         />
-        <img src="https://i.gifer.com/TCt2.gif" alt="altqseyo" />
+        <img src={slider} alt="sliderPrincipal" />
         {moviesList.map((cadaPeli, index) => {
           return (
             //carta

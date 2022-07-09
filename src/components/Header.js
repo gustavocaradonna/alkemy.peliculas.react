@@ -31,8 +31,8 @@ export function Header() {
           {" "}
           <img
             src="https://www.pngkit.com/png/detail/776-7768559_logout-icon-png-transparent-login-logout-icon-png.png"
-            height="38"
-            width="38"
+            height="35"
+            width="35"
             alt="troll"
             onClick={() => [sessionStorage.clear(), setLog(false)]}
           />
