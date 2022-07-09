@@ -21,8 +21,8 @@ function App() {
 
   return (
     <>
-      {/* <div className="container bg-dark"> */}
       <div className="container  bg-dark">
+        {/* <div className="container-fluid"> */}
         {/* <Header /> */}
 
         <Routes>

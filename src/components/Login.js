@@ -47,57 +47,36 @@ export function Login() {
   };
   const token = sessionStorage.getItem("token");
 
+  //GSAPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP
+  const timeLine = gsap.timeline();
   useEffect(() => {
-    const bloque = document.querySelector(".aa22aa");
-    gsap.to(bloque, { opacity: 1, duration: 2.5 });
+    const bloque = document.querySelectorAll(".bounceGus");
+    timeLine.to(bloque, {
+      opacity: 1,
+      duration: 1,
+      // x: 200,
+      // ease: "bounce",
+      scale: 1,
+      stagger: 0.15,
+    });
   }, []);
   return (
     <>
       {token && <Navigate to={"/listado"} />}
 
       <div className="container">
-        {/* <div className="row">
-          <div className="col">
-            <h2 className="text-light">Formulario de login</h2>
-            <form onSubmit={submitHandler}>
-              <label>
-                <span>Correo electrónico:</span> <br />
-                <input type="text" name="email" />
-              </label>
-
-              <br />
-              <label>
-                <span>Contraseña:</span> <br />
-                <input type="password" name="password" />
-              </label>
-              <br />
-              <br />
-
-              <button type="submit" className="btn btn-danger">
-                Ingresar
-              </button>
-            </form>
-          </div>
-        </div> */}
-
-        {/* principio */}
-        <section className="vh-100 gradient-custom">
-          <div className="container py-5 h-100 ">
+        <section className="vh-100 gradient-custom ">
+          <div className="container py-5 h-100  ">
             <div className="row d-flex justify-content-center align-items-center h-100   ">
-              <div className="col-12 col-md-8 col-lg-6 col-xl-5   ">
+              <div className="col-12 col-md-8 col-lg-6 col-xl-5  ">
                 <div className="card bg-dark text-white ">
-                  <div className="card-body p-5 text-center aa22aa">
-                    <div className="mb-md-5 mt-md-4 pb-5">
-                      <h2 className="fw-bold mb-2 text-uppercase">
-                        Iniciar sesión
-                      </h2>
+                  <div className="card-body p- text-center greenGus">
+                    <div className="mb-md-5 mt-md-4 pb-5 ">
+                      <h2 className="fw-bold mb-2 bounceGus">Iniciar sesión</h2>
                       <br />
-                      {/* <p class="text-white-50 mb-5">
-                        Ingresá tu email y clave.
-                      </p> */}
 
                       <form onSubmit={submitHandler}>
-                        <div className="form-outline form-white mb-4">
+                        <div className="form-outline form-white mb-4 bounceGus">
                           <input
                             type="email"
                             id="typeEmailX"
@@ -107,7 +86,7 @@ export function Login() {
                           />
                         </div>
 
-                        <div className="form-outline form-white mb-4">
+                        <div className="form-outline form-white mb-4 bounceGus">
                           <input
                             type="password"
                             id="typePasswordX"
@@ -116,15 +95,8 @@ export function Login() {
                             placeholder="Ingrese clave"
                           />
                         </div>
-
-                        {/* <p class="small mb-5 pb-lg-2">
-                          <a class="text-white-50" href="#!">
-                            Forgot password?
-                          </a>
-                        </p> */}
-
                         <button
-                          className="btn btn-outline-light btn-lg px-5"
+                          className="btn btn-outline-light btn-lg px-5 bounceGus"
                           type="submit"
                         >
                           Ingresar
@@ -143,15 +115,6 @@ export function Login() {
                         </a>
                       </div>
                     </div>
-
-                    {/* <div>
-                      <p class="mb-0">
-                        Don't have an account?{" "}
-                        <a href="#!" class="text-white-50 fw-bold">
-                          Sign Up
-                        </a>
-                      </p>
-                    </div> */}
                   </div>
                 </div>
               </div>

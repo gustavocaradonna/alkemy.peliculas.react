@@ -37,13 +37,14 @@ export function Listado(props) {
       <div className="row">
         <img
           src="https://mir-s3-cdn-cf.behance.net/project_modules/fs/ff25a865063407.5b2527aae74a8.gif"
-          alt="altqseyo"
+          alt="netflix"
         />
+        <img src="https://i.gifer.com/TCt2.gif" alt="altqseyo" />
         {moviesList.map((cadaPeli, index) => {
           return (
             //carta
 
-            <div className="col-3 bg-dark" key={index}>
+            <div className="col-lg-3 bg-dark" key={index}>
               <div className="card my-3  desenfoque-gus">
                 <Link to={`/detalle?idPelicula=${cadaPeli.id}`}>
                   <img
