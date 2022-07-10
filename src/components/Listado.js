@@ -19,10 +19,8 @@ export function Listado(props) {
   const slider4 = "https://acegif.com/wp-content/gifs/gif-marvel-83.gif";
   const slider5 =
     "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/falcon-1533278569.gif?crop=1xw:1xh;center,top&resize=480:*";
-  console.log("ESTOY EN LISTADO FUERA DE USEEFFECT");
 
   useEffect(() => {
-    console.log("ESTOY EN LISTADO");
     let myArray = [slider1, slider2, slider3, slider4, slider5];
     let rand = Math.floor(Math.random() * myArray.length);
     let rValue = myArray[rand];
