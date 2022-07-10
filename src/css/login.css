@@ -1,0 +1,17 @@
+.aa22aa {
+  background-color: rgb(228, 228, 228);
+  font-family: "Helvetica Neue";
+  /* background-image: url(../assets/fondoLogin.jpg); */
+  opacity: 1;
+}
+
+.greenGus {
+  /* opacity: 1; */
+  /* background-color: rgb(18, 45, 45); */
+
+  background-color: rgb(253, 110, 110);
+}
+
+.bounceGus {
+  opacity: 0;
+}
