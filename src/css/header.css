@@ -14,8 +14,26 @@ div#navbarSupportedContent.collapse.navbar-collapse {
 
 .txtlogincss {
   padding-left: 30px;
+  font-family: "Courier New", Courier, monospace;
+  margin-bottom: 0px;
+}
+
+.txtlistado {
+  padding-left: 30px;
+  font-family: "Courier New", Courier, monospace;
+  margin-bottom: 0px;
+}
+.txtfavs {
+  padding-left: 30px;
+  font-family: "Courier New", Courier, monospace;
+  margin-bottom: 0px;
 }
 
 .txtlogoutcss {
   margin-right: 30px;
+}
+
+.txtbuscar {
+  padding-left: 30px;
+  font-family: "Courier New", Courier, monospace;
 }

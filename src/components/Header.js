@@ -19,11 +19,16 @@ export function Header() {
       <></>
       <nav className="navbar  navbar-expand-lg navbar-light">
         <Link to={"/"} className="navbar-brand mb-0 h1 ">
-          <h3 className="text-light txtlogincss">Login</h3>
+          <h2 className="text-light txtlogincss">Login</h2>
         </Link>
         <Link to="/listado" className="navbar-brand mb-0 h1 ">
-          <h3 className="text-light ">Listado</h3>
+          <h2 className="text-light txtlistado">Listado</h2>
         </Link>
+
+        <Link to="/favs" className="navbar-brand mb-0 h1 ">
+          <h2 className="text-light txtfavs">Favs</h2>
+        </Link>
+
         {/* <div className="align-items-right"></div> */}
         {/* aca iria el buscador */}
         <Buscador />
