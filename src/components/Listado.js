@@ -4,10 +4,13 @@ import axios from "axios";
 // import swal from "@sweetalert/with-react";
 import { Header } from "./Header";
 import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
-gsap.registerPlugin(ScrollToPlugin);
 
 export function Listado(props) {
+  gsap.registerPlugin(ScrollToPlugin);
+  gsap.registerPlugin(ScrollTrigger);
+
   const token = sessionStorage.getItem("token");
   const [moviesList, setMoviesList] = useState([]);
   const [slider, setSlider] = useState([]);
@@ -40,12 +43,29 @@ export function Listado(props) {
       .catch((error) => {
         alert(<h2>Hubo errores, intenta mas tarde!</h2>);
       });
+
+    //gsap
+    gsap.to(".btn-flotante", {
+      scrollTrigger: {
+        trigger: ".btn-flotante",
+        start: "top ",
+        end: "top 100px",
+        scrub: true,
+        markers: true,
+      },
+      y: 750,
+      rotation: 360,
+      ease: "none",
+      duration: 3,
+    });
   }, []);
 
   // const bloque = document.querySelector("div#root");
 
   const goToTop = () => {
     // window.scrollTo(0, 0);
+    console.log("ScrollTrigger", ScrollTrigger);
+
     gsap.to(window, { duration: 0, scrollTo: 0 });
   };
 

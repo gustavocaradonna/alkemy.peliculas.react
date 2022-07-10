@@ -131,7 +131,7 @@
   background-color: #ff0000; /* Color de fondo */
   padding: 18px 30px; /* Relleno del boton */
   position: fixed;
-  bottom: 20px;
+  top: 70px;
   right: 30px;
   transition: all 300ms ease 0ms;
   box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
