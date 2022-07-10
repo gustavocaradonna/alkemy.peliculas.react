@@ -26,6 +26,21 @@ export function Listado(props) {
     "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/falcon-1533278569.gif?crop=1xw:1xh;center,top&resize=480:*";
 
   useEffect(() => {
+    console.log("LIVE");
+    //gsap
+    gsap.to(".btn-flotante", {
+      scrollTrigger: {
+        trigger: ".btn-flotante",
+        start: "top ",
+        end: "top -700px ",
+        scrub: 3,
+        markers: false,
+      },
+      y: "600px",
+      rotation: 360,
+      ease: "none",
+      duration: 10,
+    });
     let myArray = [slider1, slider2, slider3, slider4, slider5];
     let rand = Math.floor(Math.random() * myArray.length);
     let rValue = myArray[rand];
@@ -43,21 +58,6 @@ export function Listado(props) {
       .catch((error) => {
         alert(<h2>Hubo errores, intenta mas tarde!</h2>);
       });
-
-    //gsap
-    gsap.to(".btn-flotante", {
-      scrollTrigger: {
-        trigger: ".btn-flotante",
-        start: "top ",
-        end: "top 100px",
-        scrub: true,
-        markers: true,
-      },
-      y: 750,
-      rotation: 360,
-      ease: "none",
-      duration: 3,
-    });
   }, []);
 
   // const bloque = document.querySelector("div#root");
@@ -122,6 +122,7 @@ export function Listado(props) {
         })}
       </div>
       <br />
+      {/* aca estaba */}
       <div>
         {" "}
         <button onClick={goToTop} className="btn-flotante">
