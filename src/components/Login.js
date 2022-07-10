@@ -9,6 +9,10 @@ import "../css/login.css";
 import { useEffect } from "react";
 
 export function Login() {
+  const sonidoNetflix = new Audio(
+    "https://nuevotono.net/audios/mp3/5faed5a672df5.mp3"
+  );
+
   const navi = useNavigate();
   const submitHandler = (e) => {
     e.preventDefault();
@@ -99,6 +103,11 @@ export function Login() {
                       <button
                         className="btn btn-outline-light btn-lg px-5 bounceGus"
                         type="submit"
+                        onClick={() => {
+                          setTimeout(function () {
+                            sonidoNetflix.play();
+                          }, 500);
+                        }}
                       >
                         Ingresar
                       </button>
