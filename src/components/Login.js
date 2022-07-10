@@ -106,7 +106,7 @@ export function Login() {
                         onClick={() => {
                           setTimeout(function () {
                             sonidoNetflix.play();
-                          }, 500);
+                          }, 1);
                         }}
                       >
                         Ingresar

@@ -16,6 +16,9 @@ export function Listado(props) {
   const token = sessionStorage.getItem("token");
   const [moviesList, setMoviesList] = useState([]);
   const [slider, setSlider] = useState([]);
+  const [videoYoutube, setVideoYoutube] = useState([]);
+
+  //gifs
 
   const slider1 = "https://c.tenor.com/aOj7N0TByXQAAAAC/marvel-avengers.gif";
   const slider2 =
@@ -26,6 +29,14 @@ export function Listado(props) {
   const slider4 = "https://acegif.com/wp-content/gifs/gif-marvel-83.gif";
   const slider5 =
     "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/falcon-1533278569.gif?crop=1xw:1xh;center,top&resize=480:*";
+
+  //videos youtube
+
+  const video1 = "https://www.youtube.com/embed/6ZfuNTqbHE8?rel=0&autoplay=1";
+  const video2 = "https://www.youtube.com/embed/2OMixTIRQcY?rel=0&autoplay=1";
+  const video3 = "https://www.youtube.com/embed/MadPYIODRRY?rel=0&autoplay=1";
+  const video4 = "https://www.youtube.com/embed/GkUTq5Ui6DA?rel=0&autoplay=1";
+  const video5 = "https://www.youtube.com/embed/-F2watcvQQs?rel=0&autoplay=1";
 
   useEffect(() => {
     console.log("LIVE");
@@ -45,9 +56,12 @@ export function Listado(props) {
       background: "#2bcd84",
     });
     let myArray = [slider1, slider2, slider3, slider4, slider5];
-    let rand = Math.floor(Math.random() * myArray.length);
-    let rValue = myArray[rand];
-    setSlider(rValue);
+    let arrayDeVideos = [video1, video2, video3, video4, video5];
+
+    let rand = Math.floor(Math.random() * arrayDeVideos.length);
+    let rValue = arrayDeVideos[rand];
+    console.log("Resultado de random", rValue);
+    setVideoYoutube(video1);
 
     const endPoint =
       "https://api.themoviedb.org/3/discover/movie?api_key=eb4b4d4c70bdc53fa1ac4ee02b47664e&language=es-ES&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_watch_monetization_types=flatrate";
@@ -80,11 +94,20 @@ export function Listado(props) {
 
       {/* {estructura base} */}
       <div className="row">
+        {/* <img src={slider} alt="sliderPrincipal" className="slpr" /> */}
+        <iframe
+          // width="100"
+          height="650"
+          src={videoYoutube}
+          title="Marvel Studios' Avengers: Infinity War Official Trailer"
+          frameBorder="0"
+          allow="accelerometer;  clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
+          allowFullScreen
+        ></iframe>
         <img
           src="https://mir-s3-cdn-cf.behance.net/project_modules/fs/ff25a865063407.5b2527aae74a8.gif"
           alt="netflix"
         />
-        <img src={slider} alt="sliderPrincipal" className="slpr" />
         {moviesList.map((cadaPeli, index) => {
           return (
             //carta

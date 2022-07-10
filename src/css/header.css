@@ -5,6 +5,7 @@ div#navbarSupportedContent.collapse.navbar-collapse {
 .navbar {
   padding-top: 150rem;
   padding-bottom: 500px;
+  /* position: fixed; */
 }
 
 /* nav.navbar.navbar-expand-lg.navbar-light {
