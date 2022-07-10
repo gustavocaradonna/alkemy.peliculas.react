@@ -40,6 +40,7 @@ export function Listado(props) {
       rotation: 360,
       ease: "none",
       duration: 10,
+      background: "#2bcd84",
     });
     let myArray = [slider1, slider2, slider3, slider4, slider5];
     let rand = Math.floor(Math.random() * myArray.length);
