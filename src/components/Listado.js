@@ -3,6 +3,7 @@ import { Link, Navigate } from "react-router-dom";
 import axios from "axios";
 // import swal from "@sweetalert/with-react";
 import { Header } from "./Header";
+import gsap from "gsap";
 
 export function Listado(props) {
   const token = sessionStorage.getItem("token");
@@ -41,8 +42,12 @@ export function Listado(props) {
       });
   }, []);
 
+  // const bloque = document.querySelector("div#root");
+
   const goToTop = () => {
     window.scrollTo(0, 0);
+
+    // gsap.to(window, { duration: 2, scrollTo: 400 });
   };
 
   return (
@@ -57,7 +62,7 @@ export function Listado(props) {
           src="https://mir-s3-cdn-cf.behance.net/project_modules/fs/ff25a865063407.5b2527aae74a8.gif"
           alt="netflix"
         />
-        <img src={slider} alt="sliderPrincipal" />
+        <img src={slider} alt="sliderPrincipal" className="slpr" />
         {moviesList.map((cadaPeli, index) => {
           return (
             //carta
