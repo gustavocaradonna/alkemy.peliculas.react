@@ -4,6 +4,8 @@ import axios from "axios";
 // import swal from "@sweetalert/with-react";
 import { Header } from "./Header";
 import gsap from "gsap";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+gsap.registerPlugin(ScrollToPlugin);
 
 export function Listado(props) {
   const token = sessionStorage.getItem("token");
@@ -43,9 +45,8 @@ export function Listado(props) {
   // const bloque = document.querySelector("div#root");
 
   const goToTop = () => {
-    window.scrollTo(0, 0);
-
-    // gsap.to(window, { duration: 2, scrollTo: 400 });
+    // window.scrollTo(0, 0);
+    gsap.to(window, { duration: 0, scrollTo: 0 });
   };
 
   return (

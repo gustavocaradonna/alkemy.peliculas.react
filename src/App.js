@@ -8,6 +8,7 @@ import { Footer } from "./components/Footer";
 import { Detalle } from "./components/Detalle";
 import { Resultado } from "./components/Resultado";
 
+import Saludo from "./components/Saludo";
 //libraries
 import { Routes, Route } from "react-router-dom";
 //styles
@@ -15,8 +16,9 @@ import bootstrap from "bootstrap/dist/css/bootstrap.min.css";
 import "./css/app.css";
 
 function App() {
-  const addOrRemoveFromFavs = () => {
-    console.log("funcionó!");
+  const addOrRemoveFromFavs = (e) => {
+    const btn = e.currentTarget;
+    console.log(btn);
   };
 
   return (
@@ -27,13 +29,16 @@ function App() {
 
         <Routes>
           <Route path="/" element={<Login />} />
-          <Route path="/listado" element={<Listado />} />
-
+          <Route
+            path="/listado"
+            element={<Listado addOrRemoveFromFavs={addOrRemoveFromFavs} />}
+          />
           <Route path="/detalle" element={<Detalle />} />
           <Route path="/resultado" element={<Resultado />} />
         </Routes>
 
         <Footer />
+        <Saludo persona="Marcelo" />
       </div>
     </>
   );
