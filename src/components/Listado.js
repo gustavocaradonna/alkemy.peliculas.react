@@ -7,6 +7,8 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 
+import "../css/app.css";
+
 export function Listado(props) {
   gsap.registerPlugin(ScrollToPlugin);
   gsap.registerPlugin(ScrollTrigger);
@@ -32,7 +34,7 @@ export function Listado(props) {
       scrollTrigger: {
         trigger: ".btn-flotante",
         start: "top ",
-        end: "top -2700px ",
+        end: "top ",
         scrub: 3,
         markers: false,
       },

@@ -3,6 +3,19 @@ div#navbarSupportedContent.collapse.navbar-collapse {
 }
 
 .navbar {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding-top: 150rem;
+  padding-bottom: 500px;
+}
+
+/* nav.navbar.navbar-expand-lg.navbar-light {
+  position: fixed;
+  background-color: rgb(51, 84, 219);
+} */
+
+.txtlogincss {
+  padding-left: 30px;
+}
+
+.txtlogoutcss {
+  margin-right: 30px;
 }

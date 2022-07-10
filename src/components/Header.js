@@ -17,9 +17,9 @@ export function Header() {
   return (
     <header>
       <></>
-      <nav className="navbar navbar-expand-lg navbar-light ">
+      <nav className="navbar  navbar-expand-lg navbar-light">
         <Link to={"/"} className="navbar-brand mb-0 h1 ">
-          <h3 className="text-light ">Login</h3>
+          <h3 className="text-light txtlogincss">Login</h3>
         </Link>
         <Link to="/listado" className="navbar-brand mb-0 h1 ">
           <h3 className="text-light ">Listado</h3>
@@ -27,7 +27,7 @@ export function Header() {
         {/* <div className="align-items-right"></div> */}
         {/* aca iria el buscador */}
         <Buscador />
-        <button type="button">
+        <button type="button" className="txtlogoutcss">
           {" "}
           <img
             src="https://www.pngkit.com/png/detail/776-7768559_logout-icon-png-transparent-login-logout-icon-png.png"
