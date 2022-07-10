@@ -32,11 +32,11 @@ export function Listado(props) {
       scrollTrigger: {
         trigger: ".btn-flotante",
         start: "top ",
-        end: "top -700px ",
+        end: "top -2700px ",
         scrub: 3,
         markers: false,
       },
-      y: "600px",
+      y: "550px",
       rotation: 360,
       ease: "none",
       duration: 10,
