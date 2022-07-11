@@ -39,7 +39,6 @@ export function Listado(props) {
   const video5 = "https://www.youtube.com/embed/-F2watcvQQs?rel=0&autoplay=1";
 
   useEffect(() => {
-    console.log("LIVE");
     //gsap
     gsap.to(".btn-flotante", {
       scrollTrigger: {
@@ -60,7 +59,6 @@ export function Listado(props) {
 
     let rand = Math.floor(Math.random() * arrayDeVideos.length);
     let rValue = arrayDeVideos[rand];
-    console.log("Resultado de random", rValue);
     setVideoYoutube(video2);
 
     const endPoint =
@@ -81,7 +79,7 @@ export function Listado(props) {
 
   const goToTop = () => {
     // window.scrollTo(0, 0);
-    console.log("ScrollTrigger", ScrollTrigger);
+    // console.log("ScrollTrigger", ScrollTrigger);
 
     gsap.to(window, { duration: 0, scrollTo: 0 });
   };

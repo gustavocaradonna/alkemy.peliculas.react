@@ -38,10 +38,10 @@ export function Login() {
             "Credenciales correctas! Estamos listos para enviar la información"
           );
           // swal("Funciona ok gus?");
-          console.log(result.data);
+          // console.log(result.data);
           const tokenRecibido = result.data.token;
-          console.log(tokenRecibido);
-          sessionStorage.setItem("token", "tokenRecibido");
+          // console.log(tokenRecibido);
+          sessionStorage.setItem("token", tokenRecibido);
           navi("/listado");
 
           //sonido
