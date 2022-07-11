@@ -33,8 +33,8 @@ export function Listado(props) {
   //videos youtube
 
   const video1 = "https://www.youtube.com/embed/6ZfuNTqbHE8?rel=0&autoplay=1";
-  const video2 = "https://www.youtube.com/embed/2OMixTIRQcY?rel=0&autoplay=1";
-  const video3 = "https://www.youtube.com/embed/MadPYIODRRY?rel=0&autoplay=1";
+  const video2 = "https://www.youtube.com/embed/dKrVegVI0Us?rel=0&autoplay=1";
+  const video3 = "https://www.youtube.com/embed/7SlILk2WMTI?rel=0&autoplay=1";
   const video4 = "https://www.youtube.com/embed/GkUTq5Ui6DA?rel=0&autoplay=1";
   const video5 = "https://www.youtube.com/embed/-F2watcvQQs?rel=0&autoplay=1";
 
@@ -61,7 +61,7 @@ export function Listado(props) {
     let rand = Math.floor(Math.random() * arrayDeVideos.length);
     let rValue = arrayDeVideos[rand];
     console.log("Resultado de random", rValue);
-    setVideoYoutube(video1);
+    setVideoYoutube(video2);
 
     const endPoint =
       "https://api.themoviedb.org/3/discover/movie?api_key=eb4b4d4c70bdc53fa1ac4ee02b47664e&language=es-ES&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_watch_monetization_types=flatrate";

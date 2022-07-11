@@ -63,7 +63,7 @@ export function Login() {
     const bloque = document.querySelectorAll(".bounceGus");
     timeLine.to(bloque, {
       opacity: 1,
-      duration: 1,
+      duration: 0,
       // x: 200,
       // ease: "bounce",
       scale: 1,
@@ -73,9 +73,10 @@ export function Login() {
     const bloque2 = document.querySelectorAll(".greenGus");
 
     timeLine.from(bloque2, {
-      duration: 1.5,
-      ease: "bounce",
-      scale: 0.1,
+      duration: 0.75,
+      // ease: "bounce",
+      // scale: 0.1,
+      x: -1200,
     });
   }, []);
 
