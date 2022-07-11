@@ -57,16 +57,23 @@ export function Login() {
     const bloque = document.querySelectorAll(".bounceGus");
     timeLine.to(bloque, {
       opacity: 1,
-      duration: 2,
+      duration: 1,
       // x: 200,
       // ease: "bounce",
       scale: 1,
-      stagger: 0.25,
+      stagger: 0.1,
     });
   }, []);
   return (
     <>
       {token && <Navigate to={"/listado"} />}
+      <div className="imgNetflix">
+        <img
+          src="http://assets.stickpng.com/images/580b57fcd9996e24bc43c529.png"
+          alt=""
+          className="imgNetflix"
+        />
+      </div>
 
       <div className=" loginPrincipal">
         <section className="vh-100 gradient-custom ">
