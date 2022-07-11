@@ -43,6 +43,12 @@ export function Login() {
           console.log(tokenRecibido);
           sessionStorage.setItem("token", "tokenRecibido");
           navi("/listado");
+
+          //sonido
+          setTimeout(function () {
+            sonidoNetflix.play();
+          }, 1);
+          //fin sonido
         })
         .catch((err) => {
           console.log(err);
@@ -63,64 +69,76 @@ export function Login() {
       scale: 1,
       stagger: 0.1,
     });
+    //segundo efecto
+    const bloque2 = document.querySelectorAll(".greenGus");
+
+    timeLine.from(bloque2, {
+      duration: 1.5,
+      ease: "bounce",
+      scale: 0.1,
+    });
   }, []);
+
   return (
     <>
       {token && <Navigate to={"/listado"} />}
-      <div className="imgNetflix">
-        <img
-          src="http://assets.stickpng.com/images/580b57fcd9996e24bc43c529.png"
-          alt=""
-          className="imgNetflix"
-        />
-      </div>
 
-      <div className=" loginPrincipal">
-        <section className="vh-100 gradient-custom ">
-          <div className="container py-5 h-100  ">
-            <div className="row d-flex justify-content-center align-items-center h-100   ">
-              <div className="col-12 col-md-8 col-lg-6 col-xl-5  ">
-                <div className="card-body p- text-center greenGus">
-                  <div className="mb-md-5 mt-md-4 pb-5 ">
-                    <h2 className="fw-bold mb-2 text-white bounceGus">
-                      Iniciar sesión
-                    </h2>
-                    <br />
+      {/* <div className=" loginPrincipal"> */}
 
-                    <form onSubmit={submitHandler}>
-                      <div className="form-outline form-white mb-4 bounceGus">
-                        <input
-                          type="email"
-                          id="typeEmailX"
-                          className="form-control form-control-lg"
-                          name="email"
-                          placeholder="Ingrese email"
-                        />
-                      </div>
+      <img
+        src="https://assets.nflxext.com/ffe/siteui/vlv3/5fd505fa-f425-4a18-b3cc-00dd2638f541/66cec32d-b40b-4349-8f1e-4c127c0be56e/AR-es-20220704-popsignuptwoweeks-perspective_alpha_website_large.jpg"
+        alt=""
+        className="imgbk"
+      />
 
-                      <div className="form-outline form-white mb-4 bounceGus">
-                        <input
-                          type="password"
-                          id="typePasswordX"
-                          className="form-control form-control-lg"
-                          name="password"
-                          placeholder="Ingrese clave"
-                        />
-                      </div>
-                      <button
-                        className="btn btn-outline-light btn-lg px-5 bounceGus"
-                        type="submit"
-                        onClick={() => {
-                          setTimeout(function () {
-                            sonidoNetflix.play();
-                          }, 1);
-                        }}
-                      >
-                        Ingresar
-                      </button>
-                    </form>
+      <img
+        src="http://assets.stickpng.com/images/580b57fcd9996e24bc43c529.png"
+        alt=""
+        className="imgNetflix"
+      />
+      <section className="vh-100 gradient-custom ">
+        <div className="container py-5 h-100  ">
+          <div className="row d-flex justify-content-center align-items-center h-100   ">
+            <div className="col-12 col-md-8 col-lg-6 col-xl-5  ">
+              <div className="card-body p- text-center greenGus">
+                <div className="mb-md-5 mt-md-4 pb-5 ">
+                  <h2 className="fw-bold mb-2 text-white bounceGus">
+                    Iniciar sesión
+                  </h2>
+                  <br />
 
-                    {/* <div className="d-flex justify-content-center text-center mt-4 pt-1">
+                  <form onSubmit={submitHandler}>
+                    <div className="form-outline form-white mb-4 bounceGus">
+                      <input
+                        type="email"
+                        id="typeEmailX"
+                        className="form-control form-control-lg"
+                        name="email"
+                        placeholder="Ingrese email"
+                      />
+                    </div>
+
+                    <div className="form-outline form-white mb-4 bounceGus">
+                      <input
+                        type="password"
+                        id="typePasswordX"
+                        className="form-control form-control-lg"
+                        name="password"
+                        placeholder="Ingrese clave"
+                      />
+                    </div>
+                    <button
+                      className="btn btn-outline-light btn-lg px-5 bounceGus"
+                      type="submit"
+                      // onClick={() => {
+
+                      // }}
+                    >
+                      Ingresar
+                    </button>
+                  </form>
+
+                  {/* <div className="d-flex justify-content-center text-center mt-4 pt-1">
                       <a href="#!" className="text-white">
                         <i className="fab fa-facebook-f fa-lg"></i>
                       </a>
@@ -131,16 +149,16 @@ export function Login() {
                         <i className="fab fa-google fa-lg"></i>
                       </a>
                     </div> */}
-                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* 
+      {/* 
         //fin */}
-      </div>
+      {/* </div> */}
     </>
   );
 }

@@ -2,7 +2,7 @@ export function Footer() {
   return (
     <>
       <footer>
-        <div className="divider py-1 bg-light"></div>
+        {/* <div className="divider py-1 bg-light"></div> */}
 
         <div className="container bg-dark">
           <nav className="justify-content-center row align">
