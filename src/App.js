@@ -23,7 +23,7 @@ function App() {
 
   return (
     <>
-      <div className="container-fluid backgroundPrincipal ">
+      <div className=" backgroundPrincipal ">
         {/* <div className="container-fluid"> */}
         {/* <Header /> */}
 
