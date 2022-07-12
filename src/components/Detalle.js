@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { Header } from "./Header";
 import TitulosSimilares from "./TitulosSimilares";
+import swal from "@sweetalert/with-react";
 
 export function Detalle() {
   const token = sessionStorage.getItem("token");
@@ -21,7 +22,7 @@ export function Detalle() {
         setPeli(detallesData);
       })
       .catch((err) => {
-        alert("error");
+        swal("error");
       });
   }, [peli]);
 

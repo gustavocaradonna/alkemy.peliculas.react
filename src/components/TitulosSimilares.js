@@ -2,6 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import swal from "@sweetalert/with-react";
 
 const TitulosSimilares = (peli) => {
   const [moviesResults2, setMoviesResults2] = useState([]);
@@ -25,7 +26,7 @@ const TitulosSimilares = (peli) => {
         // setMoviesResults(apiData.results);
       })
       .catch((error) => {
-        alert(<h2>Hubo errores, intenta mas tarde!</h2>);
+        swal(<h2>Hubo errores, intenta mas tarde!</h2>);
       });
   }, []);
 

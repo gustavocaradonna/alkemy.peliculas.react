@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, Navigate } from "react-router-dom";
 import axios from "axios";
-// import swal from "@sweetalert/with-react";
+import swal from "@sweetalert/with-react";
 import { Header } from "./Header";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -71,7 +71,7 @@ export function Listado(props) {
         setMoviesList(apiData.results);
       })
       .catch((error) => {
-        alert(<h2>Hubo errores, intenta mas tarde!</h2>);
+        swal(<h2>Hubo errores, intenta mas tarde!</h2>);
       });
   }, []);
 

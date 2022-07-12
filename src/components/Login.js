@@ -1,5 +1,4 @@
 import axios from "axios";
-// import swal from "@sweetalert/with-react";
 import { useNavigate, Navigate } from "react-router-dom";
 
 import { gsap } from "gsap";
@@ -7,6 +6,7 @@ import { gsap } from "gsap";
 //css
 import "../css/login.css";
 import { useEffect } from "react";
+import swal from "@sweetalert/with-react";
 
 export function Login() {
   const sonidoNetflix = new Audio(
@@ -25,11 +25,11 @@ export function Login() {
     // console.log(regex.test(email));
 
     if (email === "" || password === "") {
-      alert("Los campos no pueden estar vacios");
+      swal("Los campos no pueden estar vacios");
     } else if (email !== "" && !regex.test(email)) {
-      alert("Debes escribir una direccion de correo electronico valida");
+      swal("Debes escribir una direccion de correo electronico valida");
     } else if (email !== "challenge@alkemy.org" || password !== "react") {
-      alert("Credenciales inválidas");
+      swal("Credenciales inválidas");
     } else {
       axios
         .post(PATH_API_ALKEMI, { email, password })
