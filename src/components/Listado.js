@@ -121,7 +121,8 @@ export function Listado(props) {
                 </Link>
                 <button
                   className="favourite-btn-gus"
-                  onClick={() => console.log("Agregaste a favoritos! ^^")}
+                  onClick={props.addOrRemoveFromFavs}
+                  data-movie-id={cadaPeli.id}
                 >
                   🖤
                 </button>

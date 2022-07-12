@@ -16,9 +16,48 @@ import bootstrap from "bootstrap/dist/css/bootstrap.min.css";
 import "./css/app.css";
 
 function App() {
+  const favMovies = sessionStorage.getItem("favs");
+
+  let tempMoviesInFav;
+  if (favMovies === null) {
+    tempMoviesInFav = [];
+  } else {
+    tempMoviesInFav = JSON.parse(favMovies);
+  }
+
   const addOrRemoveFromFavs = (e) => {
     const btn = e.currentTarget;
-    console.log(btn);
+    const parent = btn.parentElement;
+    const imageUrl = parent.querySelector("img").getAttribute("src");
+    const title = parent.querySelector("h5").innerText;
+    const overview = parent.querySelector("p").innerText;
+    const id = btn.dataset.movieId;
+
+    const movieData = {
+      imageUrl,
+      title,
+      overview,
+      id,
+    };
+
+    let existe = tempMoviesInFav.find((peli) => {
+      return peli.id === movieData.id;
+    });
+
+    if (!existe) {
+      tempMoviesInFav.push(movieData);
+      sessionStorage.setItem("favs", JSON.stringify(tempMoviesInFav));
+      console.log("Se agrego la pelicula");
+    } else {
+      let moviesLeft = tempMoviesInFav.filter((peli) => {
+        return peli.id !== movieData.id;
+      });
+      tempMoviesInFav = moviesLeft;
+      sessionStorage.setItem("favs", JSON.stringify(moviesLeft));
+      console.log("Se Removió la pelicula");
+    }
+    console.log("tempMoviesInFav ahora es:", tempMoviesInFav);
+    console.log("Session storage tiene ", sessionStorage);
   };
 
   return (
