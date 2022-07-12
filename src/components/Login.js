@@ -46,7 +46,7 @@ export function Login() {
 
           //sonido
           setTimeout(function () {
-            sonidoNetflix.play();
+            // sonidoNetflix.play();
           }, 1);
           //fin sonido
         })

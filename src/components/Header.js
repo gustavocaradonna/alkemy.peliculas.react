@@ -25,7 +25,7 @@ export function Header() {
           <h2 className="text-light txtlistado">Listado</h2>
         </Link>
 
-        <Link to="/favs" className="navbar-brand mb-0 h1 ">
+        <Link to="/favoritos" className="navbar-brand mb-0 h1 ">
           <h2 className="text-light txtfavs">Favs</h2>
         </Link>
 

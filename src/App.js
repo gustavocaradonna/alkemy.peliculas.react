@@ -14,6 +14,7 @@ import { Routes, Route } from "react-router-dom";
 //styles
 import bootstrap from "bootstrap/dist/css/bootstrap.min.css";
 import "./css/app.css";
+import Favoritos from "./components/Favoritos";
 
 function App() {
   const favMovies = sessionStorage.getItem("favs");
@@ -74,6 +75,7 @@ function App() {
           />
           <Route path="/detalle" element={<Detalle />} />
           <Route path="/resultado" element={<Resultado />} />
+          <Route path="/favoritos" element={<Favoritos />} />
         </Routes>
 
         <Footer />
