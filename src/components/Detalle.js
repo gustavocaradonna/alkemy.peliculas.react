@@ -6,14 +6,15 @@ import TitulosSimilares from "./TitulosSimilares";
 import swal from "@sweetalert/with-react";
 
 export function Detalle() {
-  const token = sessionStorage.getItem("token");
-  const query = new URLSearchParams(window.location.search);
-  const idPelicula = query.get("idPelicula");
-  const API_KEY = "eb4b4d4c70bdc53fa1ac4ee02b47664e";
+  let token = sessionStorage.getItem("token");
+  let query = new URLSearchParams(window.location.search);
+  let idPelicula = query.get("idPelicula");
+  let API_KEY = "eb4b4d4c70bdc53fa1ac4ee02b47664e";
 
   const [peli, setPeli] = useState();
 
   useEffect(() => {
+    console.log("ESTA ENTRANDO");
     const endPointPeli = `https://api.themoviedb.org/3/movie/${idPelicula}?api_key=${API_KEY}&language=es-ES`;
     axios
       .get(endPointPeli)
@@ -25,29 +26,6 @@ export function Detalle() {
         swal("error");
       });
   }, [peli]);
-
-  // //my test
-  // const [moviesResults2, setMoviesResults2] = useState([]);
-
-  // useEffect(() => {
-  //   const endPoint = `https://api.themoviedb.org/3/search/movie?api_key=eb4b4d4c70bdc53fa1ac4ee02b47664e&language=en-US&page=1&include_adult=false&query=${peli.title.substr(
-  //     0,
-  //     [4]
-  //   )}`;
-
-  //   console.log("UNA VEZ: " + peli.title);
-  //   axios
-  //     .get(endPoint)
-  //     .then((response) => {
-  //       const apiData = response.data.results;
-  //       setMoviesResults2(apiData);
-
-  //       // setMoviesResults(apiData.results);
-  //     })
-  //     .catch((error) => {
-  //       alert(<h2>Hubo errores, intenta mas tarde!</h2>);
-  //     });
-  // }, []);
 
   return (
     <>

@@ -1,18 +1,17 @@
 import { useNavigate } from "react-router-dom";
 
 export function Buscador() {
-  const navi = useNavigate();
+  let navi = useNavigate();
 
-  const submitHandler = (e) => {
+  let submitHandler = (e) => {
     e.preventDefault();
-    const keyword = e.currentTarget.keyword.value.trim();
-    console.log(keyword);
+    let keyword = e.currentTarget.keyword.value.trim();
 
     if (keyword.length === 0) {
       alert("Ingrese una palabra");
     } else {
+      navi(`/resultado?=${keyword}`, console.log("algo"));
       e.currentTarget.keyword.value = "";
-      navi(`/resultado?keyword=${keyword}`);
     }
   };
 

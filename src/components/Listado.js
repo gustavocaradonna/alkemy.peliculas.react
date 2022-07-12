@@ -32,7 +32,7 @@ export function Listado(props) {
 
   //videos youtube
 
-  const video1 = "https://www.youtube.com/embed/6ZfuNTqbHE8?rel=0&autoplay=1";
+  const video1 = "https://www.youtube.com/embed/6ZfuNTqbHE8?rel=0&autoplay=0";
   const video2 = "https://www.youtube.com/embed/dKrVegVI0Us?rel=0&autoplay=1";
   const video3 = "https://www.youtube.com/embed/7SlILk2WMTI?rel=0&autoplay=1";
   const video4 = "https://www.youtube.com/embed/GkUTq5Ui6DA?rel=0&autoplay=1";
