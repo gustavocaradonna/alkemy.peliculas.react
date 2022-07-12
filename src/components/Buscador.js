@@ -10,7 +10,7 @@ export function Buscador() {
     if (keyword.length === 0) {
       alert("Ingrese una palabra");
     } else {
-      navi(`/resultado?=${keyword}`, console.log("algo"));
+      navi(`/resultado?keyword=${keyword}`);
       e.currentTarget.keyword.value = "";
     }
   };

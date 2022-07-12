@@ -17,8 +17,6 @@ export function Detalle() {
 
   const [peli, setPeli] = useState();
 
-  console.log(idpeligus);
-
   useEffect(() => {
     const endPointPeli = `https://api.themoviedb.org/3/movie/${idpeligus}?api_key=${API_KEY}&language=es-ES`;
     axios
