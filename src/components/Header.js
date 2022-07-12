@@ -6,21 +6,21 @@ import "../css/header.css";
 export function Header() {
   const navi = useNavigate();
 
-  const [log, setLog] = useState(true);
+  const [logueado, setLogueado] = useState(true);
 
   useEffect(() => {
-    if (!log) {
+    if (!logueado) {
       navi("/");
     }
-  }, [log]);
+  }, [logueado]);
 
   return (
     <header>
       <></>
       <nav className="navbar  navbar-expand-lg navbar-light">
-        <Link to={"/"} className="navbar-brand mb-0 h1 ">
+        {/* <Link to={"/"} className="navbar-brand mb-0 h1 ">
           <h2 className="text-light txtlogincss">Login</h2>
-        </Link>
+        </Link> */}
         <Link to="/listado" className="navbar-brand mb-0 h1 ">
           <h2 className="text-light txtlistado">Listado</h2>
         </Link>
@@ -39,7 +39,7 @@ export function Header() {
             height="35"
             width="35"
             alt="troll"
-            onClick={() => [sessionStorage.clear(), setLog(false)]}
+            onClick={() => [sessionStorage.clear(), setLogueado(false)]}
           />
         </button>
       </nav>
