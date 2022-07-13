@@ -19,7 +19,6 @@ const Favoritos = (props) => {
   //     }
   //   }, []);
 
-  console.log("LAS PROPS Q LLEGAN SON: " + props.favs);
   return (
     <>
       {!token && <Navigate to={"/"} />}

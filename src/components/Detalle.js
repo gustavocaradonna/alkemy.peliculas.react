@@ -35,6 +35,7 @@ export function Detalle(props) {
       {!token && <Navigate to={"/"} />}
       {/* <h2 className="text-light">-Detalle </h2> */}
 
+      {console.log("LAS PROPS EN FAVS SON: " + JSON.stringify(props.favs))}
       <Header favs={props.favs} />
 
       {peli && (
@@ -79,7 +80,7 @@ export function Detalle(props) {
             <p>{peli.overview}</p>
           </div>
           {/* <TitulosSimilares prop={peli.title} /> */}
-          <TitulosSimilares prop={peli} />
+          <TitulosSimilares prop={peli} prop2={props} />
         </div>
       )}
     </>

@@ -4,12 +4,15 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import swal from "@sweetalert/with-react";
 
-const TitulosSimilares = (peli) => {
+const TitulosSimilares = (props) => {
+  // console.log("EL TITULO ES " + JSON.stringify(props.prop.title));
+  console.log("La funcion es  " + JSON.stringify(props.prop2));
+
   const [moviesResults2, setMoviesResults2] = useState([]);
 
   // console.log("cuantas veces entra aca (fuera del useEffect?");
 
-  let tituloBuscado = peli.prop.title;
+  let tituloBuscado = props.prop.title;
   // let idPeli = peli.prop.id;
 
   useEffect(() => {
@@ -69,6 +72,13 @@ const TitulosSimilares = (peli) => {
                     Detalle
                   </Link>
                 </div>
+                <button
+                  className="favourite-btn-gus"
+                  onClick={props.prop2.addOrRemoveFromFavs}
+                  data-movie-id={cadaPeli.id}
+                >
+                  🖤
+                </button>
               </div>
             </div>
           );
