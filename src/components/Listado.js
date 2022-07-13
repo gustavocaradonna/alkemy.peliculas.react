@@ -87,7 +87,7 @@ export function Listado(props) {
   return (
     <>
       {!token && <Navigate to={"/"} />}
-      <Header />
+      <Header favs={props.favs} />
       {/* <h1 className="bg-primary  row align">NetFlix!</h1> */}
 
       {/* {estructura base} */}

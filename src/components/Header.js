@@ -3,7 +3,7 @@ import { Buscador } from "./Buscador";
 import { useState, useEffect } from "react";
 import "../css/header.css";
 
-export function Header() {
+export function Header(props) {
   const navi = useNavigate();
 
   const [logueado, setLogueado] = useState(true);
@@ -28,6 +28,10 @@ export function Header() {
         <Link to="/favoritos" className="navbar-brand mb-0 h1 ">
           <h2 className="text-light txtfavs">Favs</h2>
         </Link>
+
+        <div to="/cuantos" className="navbar-brand mb-0 h1 ">
+          <h2 className="text-success"> {props.favs.length}</h2>
+        </div>
 
         {/* <div className="align-items-right"></div> */}
         {/* aca iria el buscador */}

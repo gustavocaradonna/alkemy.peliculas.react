@@ -15,8 +15,22 @@ import { Routes, Route } from "react-router-dom";
 import bootstrap from "bootstrap/dist/css/bootstrap.min.css";
 import "./css/app.css";
 import Favoritos from "./components/Favoritos";
+import { useState, useEffect } from "react";
 
 function App() {
+  const [favs, setFavs] = useState([]);
+
+  useEffect(() => {
+    const favsInLocal = sessionStorage.getItem("favs");
+    console.log("figura esto: ", favsInLocal);
+
+    if (favsInLocal !== null) {
+      const favsArray = JSON.parse(favsInLocal);
+      console.log(favsArray);
+      setFavs(favsArray);
+    }
+  }, []);
+
   const favMovies = sessionStorage.getItem("favs");
 
   let tempMoviesInFav;
@@ -48,6 +62,7 @@ function App() {
     if (!existe) {
       tempMoviesInFav.push(movieData);
       sessionStorage.setItem("favs", JSON.stringify(tempMoviesInFav));
+      setFavs(tempMoviesInFav);
       console.log("Se agrego la pelicula");
     } else {
       let moviesLeft = tempMoviesInFav.filter((peli) => {
@@ -55,6 +70,7 @@ function App() {
       });
       tempMoviesInFav = moviesLeft;
       sessionStorage.setItem("favs", JSON.stringify(moviesLeft));
+      setFavs(tempMoviesInFav);
       console.log("Se Removió la pelicula");
     }
     console.log("tempMoviesInFav ahora es:", tempMoviesInFav);
@@ -71,11 +87,21 @@ function App() {
           <Route path="/" element={<Login />} />
           <Route
             path="/listado"
-            element={<Listado addOrRemoveFromFavs={addOrRemoveFromFavs} />}
+            element={
+              <Listado addOrRemoveFromFavs={addOrRemoveFromFavs} favs={favs} />
+            }
           />
           <Route path="/detalle" element={<Detalle />} />
           <Route path="/resultado" element={<Resultado />} />
-          <Route path="/favoritos" element={<Favoritos />} />
+          <Route
+            path="/favoritos"
+            element={
+              <Favoritos
+                favs={favs}
+                addOrRemoveFromFavs={addOrRemoveFromFavs}
+              />
+            }
+          />
         </Routes>
 
         <Footer />

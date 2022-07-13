@@ -4,25 +4,26 @@ import { Navigate } from "react-router-dom";
 import { Header } from "./Header";
 import { Link } from "react-router-dom";
 
-const Favoritos = () => {
-  const [favs, setFavs] = useState([]);
+const Favoritos = (props) => {
+  //   const [favs, setFavs] = useState([]);
   const token = sessionStorage.getItem("token");
 
-  useEffect(() => {
-    const favsInLocal = sessionStorage.getItem("favs");
-    console.log("figura esto: ", favsInLocal);
+  //   useEffect(() => {
+  //     const favsInLocal = sessionStorage.getItem("favs");
+  //     console.log("figura esto: ", favsInLocal);
 
-    if (favsInLocal !== null) {
-      const favsArray = JSON.parse(favsInLocal);
-      console.log(favsArray);
-      setFavs(favsArray);
-    }
-  }, []);
+  //     if (favsInLocal !== null) {
+  //       const favsArray = JSON.parse(favsInLocal);
+  //       console.log(favsArray);
+  //       setFavs(favsArray);
+  //     }
+  //   }, []);
 
+  console.log("LAS PROPS Q LLEGAN SON: " + props.favs);
   return (
     <>
       {!token && <Navigate to={"/"} />}
-      <Header />
+      <Header favs={props.favs} />
       {/* <h1 className="bg-primary  row align">NetFlix!</h1> */}
 
       {/* {estructura base} */}
@@ -31,7 +32,7 @@ const Favoritos = () => {
           src="https://mir-s3-cdn-cf.behance.net/project_modules/fs/ff25a865063407.5b2527aae74a8.gif"
           alt="netflix"
         />
-        {favs.map((cadaPeli, index) => {
+        {props.favs.map((cadaPeli, index) => {
           return (
             //carta
 
@@ -44,13 +45,13 @@ const Favoritos = () => {
                     alt="..."
                   />
                 </Link>
-                {/* <button
+                <button
                   className="favourite-btn-gus"
                   onClick={props.addOrRemoveFromFavs}
                   data-movie-id={cadaPeli.id}
                 >
                   🖤
-                </button> */}
+                </button>
 
                 <div className="card-body">
                   <h5 className="card-title">
