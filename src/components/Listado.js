@@ -100,7 +100,6 @@ export function Listado(props) {
           title="Marvel Studios' Avengers: Infinity War Official Trailer"
           frameBorder="0"
           allow="accelerometer;  clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
-          allowFullScreen
         ></iframe>
         <img
           src="https://mir-s3-cdn-cf.behance.net/project_modules/fs/ff25a865063407.5b2527aae74a8.gif"

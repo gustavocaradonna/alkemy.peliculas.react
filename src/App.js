@@ -22,11 +22,9 @@ function App() {
 
   useEffect(() => {
     const favsInLocal = sessionStorage.getItem("favs");
-    console.log("figura esto: ", favsInLocal);
 
     if (favsInLocal !== null) {
       const favsArray = JSON.parse(favsInLocal);
-      console.log(favsArray);
       setFavs(favsArray);
     }
   }, []);
@@ -63,7 +61,6 @@ function App() {
       tempMoviesInFav.push(movieData);
       sessionStorage.setItem("favs", JSON.stringify(tempMoviesInFav));
       setFavs(tempMoviesInFav);
-      console.log("Se agrego la pelicula");
     } else {
       let moviesLeft = tempMoviesInFav.filter((peli) => {
         return peli.id !== movieData.id;

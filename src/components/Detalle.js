@@ -55,9 +55,15 @@ export function Detalle(props) {
             />
           </button> */}
 
-          <div className="col-4">
-            <div className="divider py-1 bg-light"></div>
-
+          <div className="card col-3 desenfoque-gus">
+            {/* <div className="divider py-1 bg-light"></div> */}
+            {/* <button
+              className="favourite-btn-gus"
+              onClick={props.addOrRemoveFromFavs}
+              data-movie-id={peli.id}
+            >
+              🖤
+            </button> */}
             <img
               src={`https://image.tmdb.org/t/p/w500/${peli.poster_path}`}
               className="card-img-top"
@@ -65,19 +71,22 @@ export function Detalle(props) {
             />
           </div>
           <div className="col-8 text-light">
-            <h1> {peli.title}</h1>
+            <h2 className="txtlistado"> {peli.title}</h2>
             <br />
-            <h5>Fecha de estreno: {peli.release_date} </h5>
+            <h5 className="txtlistado">
+              Fecha de estreno: {peli.release_date}{" "}
+            </h5>
             {/* <h5>Género: {peli.genres[0].name}</h5> */}
-            <h5>
+            <h5 className="txtlistado">
               Género:{" "}
               {peli.genres.map((cadaGenero) => (
                 <span key={cadaGenero.id}>{cadaGenero.name + " - "}</span>
               ))}
             </h5>
             <br />
-            <h5 className="">Sinopsis:</h5>
-            <p>{peli.overview}</p>
+            <h5 className="txtlistado">Sinopsis:</h5>
+            <br />
+            <p className="txtlistado">{peli.overview}</p>
           </div>
           {/* <TitulosSimilares prop={peli.title} /> */}
           <TitulosSimilares prop={peli} prop2={props} />

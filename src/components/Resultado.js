@@ -39,7 +39,7 @@ export function Resultado(props) {
           return (
             //carta
             <div className="col-2 bg-dark" key={index}>
-              <div className="card my-3">
+              <div className="card my-3 desenfoque-gus">
                 <Link to={`/detalle?idPelicula=${cadaPeli.id}`}>
                   <img
                     src={`https://image.tmdb.org/t/p/w500/${cadaPeli.poster_path}`}

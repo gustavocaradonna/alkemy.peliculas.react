@@ -6,7 +6,7 @@ import swal from "@sweetalert/with-react";
 
 const TitulosSimilares = (props) => {
   // console.log("EL TITULO ES " + JSON.stringify(props.prop.title));
-  console.log("La funcion es  " + JSON.stringify(props.prop2));
+  // console.log("La funcion es  " + JSON.stringify(props.prop2));
 
   const [moviesResults2, setMoviesResults2] = useState([]);
 
@@ -39,14 +39,14 @@ const TitulosSimilares = (props) => {
 
   return (
     <div>
-      <h1 className="text-gus-text-white">Títulos similares</h1>
+      <h1 className="text-gus-text-white txtlistado">Títulos similares</h1>
 
       <div className="row">
         {moviesResults2.map((cadaPeli, index) => {
           return (
             //carta
             <div className="col-2 bg-dark" key={index}>
-              <div className="card my-3">
+              <div className="card my-3 desenfoque-gus">
                 <Link
                   to={`/detalle?idPelicula=${cadaPeli.id}`}
                   onClick={goToTop}
