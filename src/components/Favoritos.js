@@ -3,6 +3,8 @@ import { useState, useEffect } from "react";
 import { Navigate } from "react-router-dom";
 import { Header } from "./Header";
 import { Link } from "react-router-dom";
+import { gsap } from "gsap";
+import "../css/login.css";
 
 const Favoritos = (props) => {
   //   const [favs, setFavs] = useState([]);
@@ -18,6 +20,20 @@ const Favoritos = (props) => {
   //       setFavs(favsArray);
   //     }
   //   }, []);
+
+  useEffect(() => {
+    console.log("ok no?");
+    const timeLine = gsap.timeline();
+    const bloque = document.querySelectorAll(".bounceGus4");
+    timeLine.to(bloque, {
+      opacity: 1,
+      duration: 5,
+      // x: 200,
+      ease: "bounce.out",
+      scale: 1,
+      stagger: 0.3,
+    });
+  }, []);
 
   return (
     <>
@@ -36,7 +52,7 @@ const Favoritos = (props) => {
             //carta
 
             <div className="col-lg-2 bg-dark" key={index}>
-              <div className="card my-3  desenfoque-gus">
+              <div className="card my-3  desenfoque-gus bounceGus4">
                 <Link to={`/detalle?idPelicula=${cadaPeli.id}`}>
                   <img
                     src={cadaPeli.imageUrl}
