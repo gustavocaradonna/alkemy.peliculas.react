@@ -55,7 +55,7 @@ export function Detalle(props) {
             />
           </button> */}
 
-          <div className="card col-3 desenfoque-gus">
+          <div className="card col-lg-3 desenfoque-gus">
             {/* <div className="divider py-1 bg-light"></div> */}
             {/* <button
               className="favourite-btn-gus"
