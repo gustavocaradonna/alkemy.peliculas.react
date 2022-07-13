@@ -45,7 +45,7 @@ const TitulosSimilares = (props) => {
         {moviesResults2.map((cadaPeli, index) => {
           return (
             //carta
-            <div className="col-2 bg-dark" key={index}>
+            <div className="col-lg-2 bg-dark" key={index}>
               <div className="card my-3 desenfoque-gus">
                 <Link
                   to={`/detalle?idPelicula=${cadaPeli.id}`}
