@@ -26,7 +26,7 @@ export function Detalle(props) {
         setPeli(detallesData);
       })
       .catch((err) => {
-        swal("error");
+        swal("Error, no estás logueado");
       });
   }, [searchParams]);
 

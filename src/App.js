@@ -92,7 +92,15 @@ function App() {
             }
           />
           <Route path="/detalle" element={<Detalle favs={favs} />} />
-          <Route path="/resultado" element={<Resultado />} />
+          <Route
+            path="/resultado"
+            element={
+              <Resultado
+                addOrRemoveFromFavs={addOrRemoveFromFavs}
+                favs={favs}
+              />
+            }
+          />
           <Route
             path="/favoritos"
             element={
@@ -105,7 +113,7 @@ function App() {
         </Routes>
 
         <Footer />
-        <Saludo persona="Marcelo" />
+        {/* <Saludo persona="Marcelo" /> */}
       </div>
     </>
   );

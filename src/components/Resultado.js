@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { Header } from "./Header";
 import { useSearchParams } from "react-router-dom";
 
-export function Resultado() {
+export function Resultado(props) {
   // let query = new URLSearchParams(window.location.search);
   // let keyword = query.get("keyword");
   const [searchParams, setSearchParams] = useSearchParams([]);
@@ -28,7 +28,7 @@ export function Resultado() {
 
   return (
     <>
-      <Header />
+      <Header favs={props.favs} />
       <h2 className="text-light">Tu búsqueda: {result}</h2>
       <div className="row">
         <img
@@ -47,6 +47,7 @@ export function Resultado() {
                     alt="..."
                   />
                 </Link>
+
                 <div className="card-body">
                   <h5 className="card-title">
                     {cadaPeli.title.substring(0, 25)}
@@ -61,6 +62,13 @@ export function Resultado() {
                     Detalle
                   </Link>
                 </div>
+                <button
+                  className="favourite-btn-gus"
+                  onClick={props.addOrRemoveFromFavs}
+                  data-movie-id={cadaPeli.id}
+                >
+                  🖤
+                </button>
               </div>
             </div>
           );
