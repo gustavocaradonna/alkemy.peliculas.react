@@ -6,7 +6,7 @@ import TitulosSimilares from "./TitulosSimilares";
 import swal from "@sweetalert/with-react";
 import { useSearchParams } from "react-router-dom";
 
-export function Detalle() {
+export function Detalle(props) {
   let token = sessionStorage.getItem("token");
   // let query = new URLSearchParams(window.location.search);
   // let idPelicula = query.get("idPelicula");
@@ -35,7 +35,7 @@ export function Detalle() {
       {!token && <Navigate to={"/"} />}
       {/* <h2 className="text-light">-Detalle </h2> */}
 
-      <Header />
+      <Header favs={props.favs} />
 
       {peli && (
         <div className="row">

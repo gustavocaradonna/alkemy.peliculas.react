@@ -29,7 +29,7 @@ export function Header(props) {
           <h2 className="text-light txtfavs">Favs</h2>
         </Link>
 
-        <div to="/cuantos" className="navbar-brand mb-0 h1 ">
+        <div className="navbar-brand mb-0 h1">
           <h2 className="text-success"> {props.favs.length}</h2>
         </div>
 
