@@ -1,0 +1,40 @@
+div#navbarSupportedContent.collapse.navbar-collapse {
+  padding-right: 20px;
+}
+
+.navbar {
+  padding-top: 150rem;
+  padding-bottom: 500px;
+  /* position: fixed; */
+}
+
+/* nav.navbar.navbar-expand-lg.navbar-light {
+  position: fixed;
+  background-color: rgb(51, 84, 219);
+} */
+
+.txtlogincss {
+  padding-left: 30px;
+  font-family: "Courier New", Courier, monospace;
+  margin-bottom: 0px;
+}
+
+.txtlistado {
+  padding-left: 30px;
+  font-family: "Courier New", Courier, monospace;
+  margin-bottom: 0px;
+}
+.txtfavs {
+  padding-left: 30px;
+  font-family: "Courier New", Courier, monospace;
+  margin-bottom: 0px;
+}
+
+.txtlogoutcss {
+  margin-right: 30px;
+}
+
+.txtbuscar {
+  padding-left: 30px;
+  font-family: "Courier New", Courier, monospace;
+}

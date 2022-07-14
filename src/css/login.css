@@ -1,0 +1,35 @@
+.greenGus {
+  /* opacity: 1; */
+  /* background-color: rgb(18, 45, 45); */
+
+  background-color: rgb(0, 0, 0);
+  opacity: 0.9;
+}
+
+.bounceGus {
+  opacity: 0;
+}
+
+.bounceGus4 {
+  opacity: 0;
+}
+/* 
+.loginPrincipal {
+  background-image: url(https://assets.nflxext.com/ffe/siteui/vlv3/5fd505fa-f425-4a18-b3cc-00dd2638f541/66cec32d-b40b-4349-8f1e-4c127c0be56e/AR-es-20220704-popsignuptwoweeks-perspective_alpha_website_large.jpg);
+  opacity: 0.;
+} */
+
+.loginNeflix {
+}
+
+.imgNetflix {
+  width: 256px;
+  height: 144px;
+  position: absolute;
+  opacity: 1;
+}
+
+.imgbk {
+  opacity: 0.4;
+  position: fixed;
+}
